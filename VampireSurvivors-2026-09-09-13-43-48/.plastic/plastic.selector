@@ -1,0 +1,4 @@
+repository "VampireSurvivors/VampireSurvivors@9072116735926@cloud"
+  path "/"
+    br "/main"
+    co "/main"
