@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class Enemy : MonoBehaviour, IDamageable
+public class Enemy : MonoBehaviour, IDamageable, IDroppable
 {
     [SerializeField] private EnemyData enemyData;
 
@@ -9,6 +9,27 @@ public class Enemy : MonoBehaviour, IDamageable
     private float currentHealth;
 
     private bool isDead = false;
+
+    [Header("Needed Components")]
+    private Sprite sprite;
+
+    private IEnemyBehaviour enemyBehaviour;
+
+    
+
+    private void Awake()
+    {
+        if (TryGetComponent<IEnemyBehaviour>(out enemyBehaviour))
+        {
+            enemyBehaviour.Initialize(enemyData);
+        }
+        else
+        {
+            Debug.LogWarning("EnemyBehaviour component not found on " + gameObject.name);
+        }
+
+        sprite = GetComponent<SpriteRenderer>().sprite;
+    }
 
     private void Start()
     {
@@ -38,15 +59,20 @@ public class Enemy : MonoBehaviour, IDamageable
         }
     }
 
-    public void Die()
+    public void Drop()
     {
-        //Death animation
-
         //Decide if enemy will drop an item or not
 
         //Decide if it will be xp or gold
 
         //Drop decided item with their amount
+    }
+
+    public void Die()
+    {
+        //Death animation
+
+        Drop();
 
         Destroy(gameObject);
     }

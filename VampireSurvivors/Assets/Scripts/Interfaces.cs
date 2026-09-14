@@ -10,6 +10,11 @@ public interface IEnemyBehaviour
     public void Move();
 }
 
+public interface IDroppable
+{
+    public void Drop();
+}
+
 public interface ICollectable
 {
     public void Pickup();
