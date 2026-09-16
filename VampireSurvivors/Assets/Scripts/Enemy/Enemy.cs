@@ -15,8 +15,6 @@ public class Enemy : MonoBehaviour, IDamageable, IDroppable
 
     private IEnemyBehaviour enemyBehaviour;
 
-    
-
     private void Awake()
     {
         if (TryGetComponent<IEnemyBehaviour>(out enemyBehaviour))

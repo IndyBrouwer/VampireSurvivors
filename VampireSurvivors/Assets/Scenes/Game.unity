@@ -1253,6 +1253,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d518338ae6b8834ba1f8519a50c39e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Behaviour
+  enemyData: {fileID: 0}
+  speed: 0
 --- !u!1 &657206367
 GameObject:
   m_ObjectHideFlags: 0
@@ -3165,6 +3167,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34a6243ba8a15d944ad02e8e999616e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
+  moveSpeed: 5
 --- !u!114 &1794624324
 MonoBehaviour:
   m_ObjectHideFlags: 0

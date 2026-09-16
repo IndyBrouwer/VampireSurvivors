@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Behaviour : MonoBehaviour, IEnemyBehaviour
+public class EnemyBehaviour : MonoBehaviour, IEnemyBehaviour
 {
     private EnemyData enemyData;
     private float speed;
@@ -14,6 +14,6 @@ public class Behaviour : MonoBehaviour, IEnemyBehaviour
 
     public void Move()
     {
-        //Move towards player
+        //Move towards player?
     }
 }
