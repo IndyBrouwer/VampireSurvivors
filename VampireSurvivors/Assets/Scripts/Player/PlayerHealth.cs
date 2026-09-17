@@ -13,6 +13,11 @@ public class PlayerHealth : MonoBehaviour, IDamageable
     [Header("Components")]
     private Animator animator;
 
+    [Header("Other Scripts")]
+    [SerializeField] private GameOverUI gameOverUIScript;
+    [SerializeField] private DamageEffect damageEffectScript;
+    [SerializeField] private ScreenShake screenShakeScript;
+
     private void Start()
     {
         animator = GetComponent<Animator>();
@@ -40,6 +45,9 @@ public class PlayerHealth : MonoBehaviour, IDamageable
 
     public void TakeDamage(float damage)
     {
+        //Damage vfx
+        damageEffectScript.DamageColorEffect(GetComponent<SpriteRenderer>());
+
         currentHealth -= damage;
         
         //Ensure that currentHealth does not go below 0
@@ -50,6 +58,9 @@ public class PlayerHealth : MonoBehaviour, IDamageable
 
         if (currentHealth <= 0)
         {
+            //Disable slider fill
+            healthSlider.fillRect.gameObject.SetActive(false);
+
             Die();
         }
     }
@@ -57,5 +68,14 @@ public class PlayerHealth : MonoBehaviour, IDamageable
     public void Die()
     {
         Debug.Log("Player has died.");
+
+        //Shake screen effect
+        screenShakeScript.CamShake();
+
+        //Trigger death animation
+        animator.SetTrigger("Die");
+
+        //Trigger game over screen (UI)
+        gameOverUIScript.ShowGameOverUI();
     }
 }

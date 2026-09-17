@@ -19,3 +19,15 @@ public interface ICollectable
 {
     public void Pickup();
 }
+
+public interface ILevelable
+{
+    public void LevelUp();
+
+    public void SetValues();
+}
+
+public interface ISpawnable
+{
+    public void Spawn();
+}

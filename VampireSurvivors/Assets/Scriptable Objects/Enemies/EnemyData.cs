@@ -4,7 +4,7 @@ using UnityEngine;
 public class EnemyData : ScriptableObject
 {
     [Header("Enemy Identification")]
-    public string EnemyName;
+    public string enemyName;
     public Sprite sprite;
 
     [Header("Enemy Settings")]
@@ -15,6 +15,7 @@ public class EnemyData : ScriptableObject
 
     [Header("Drop Settings")]
     public float dropRate;
-    public int xpAmount;
-    public int goldDropAmount;
+    public DropData[] possibleDrops;
+    public float xpAmount;
+    public float goldAmount;
 }

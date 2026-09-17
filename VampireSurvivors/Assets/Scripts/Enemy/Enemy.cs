@@ -1,7 +1,7 @@
+using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
-public class Enemy : MonoBehaviour, IDamageable, IDroppable
+public class Enemy : MonoBehaviour, IDamageable, IDroppable, ILevelable
 {
     [SerializeField] private EnemyData enemyData;
 
@@ -14,6 +14,10 @@ public class Enemy : MonoBehaviour, IDamageable, IDroppable
     private Sprite sprite;
 
     private IEnemyBehaviour enemyBehaviour;
+    private Dictionary<DropData, float> dropPairs = new Dictionary<DropData, float>();
+
+    [Header("Other Scripts")]
+    [SerializeField] private DamageEffect damageEffectScript;
 
     private void Awake()
     {
@@ -27,25 +31,49 @@ public class Enemy : MonoBehaviour, IDamageable, IDroppable
         }
 
         sprite = GetComponent<SpriteRenderer>().sprite;
+
+        SetupEnemy();
     }
 
-    private void Start()
+    private void SetupEnemy()
     {
-        maxHealth = enemyData.health;
+        gameObject.name = enemyData.enemyName;
+        sprite = enemyData.sprite;
 
+        maxHealth = enemyData.health;
         currentHealth = maxHealth;
+    }
+
+    public void LevelUp()
+    {
+        //With every new wave, increase Scriptable objects values by a certain percentage
+    }
+
+    public void SetValues()
+    {
+        //Change local vars
     }
 
     private void Update()
     {
-        if (Keyboard.current.spaceKey.wasPressedThisFrame)
+        //Call the move function from the enemy behaviour script
+        enemyBehaviour.Move();
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        //Attack player using IDamageable interface
+        if (collision.CompareTag("Player") && collision.TryGetComponent<IDamageable>(out IDamageable damageable))
         {
-            TakeDamage(10f);
+            damageable.TakeDamage(enemyData.damage);
         }
     }
 
     public void TakeDamage(float damage)
     {
+        //Damage vfx
+        damageEffectScript.DamageColorEffect(GetComponent<SpriteRenderer>());
+
         //Damage animation
 
         currentHealth -= damage;
@@ -60,10 +88,27 @@ public class Enemy : MonoBehaviour, IDamageable, IDroppable
     public void Drop()
     {
         //Decide if enemy will drop an item or not
+        if (Random.value <= enemyData.dropRate)
+        {
+            foreach (DropData drop in enemyData.possibleDrops)
+            {
+                if (DropType.XP == drop.dropType)
+                {
+                    dropPairs.Add(drop, enemyData.xpAmount);
+                }
+                else if (DropType.Gold == drop.dropType)
+                {
+                    dropPairs.Add(drop, enemyData.goldAmount);
+                }
+            }
 
-        //Decide if it will be xp or gold
+            //Decide if it will be xp or gold
 
-        //Drop decided item with their amount
+            //Drop decided item with their amount
+
+            //Instantiate the item prefab at the enemy's position
+            //Instantiate(drop.prefab, transform.position, Quaternion.identity);
+        }
     }
 
     public void Die()

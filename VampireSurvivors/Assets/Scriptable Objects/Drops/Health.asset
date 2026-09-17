@@ -12,6 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 672ff0efbbcea154499d516307691ecb, type: 3}
   m_Name: Health
   m_EditorClassIdentifier: Assembly-CSharp::DropData
-  name: Health Drop
+  dropName: Health Regen
   description: Player can collect to regen their health.
   sprite: {fileID: 0}
+  prefab: {fileID: 0}
+  dropRate: 0.5
+  dropAmount: 1
