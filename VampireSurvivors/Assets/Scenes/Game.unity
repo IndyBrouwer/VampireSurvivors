@@ -67428,7 +67428,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -8539808503653396835, guid: 7ff80ff0618470e45b3adef3166d7938, type: 3}
+  m_Sprite: {fileID: 561262147255405825, guid: 2dfbded3778f3d14cb8a720556947bef, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -68451,13 +68451,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: -2859697096646718571, guid: 2dfbded3778f3d14cb8a720556947bef, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -69449,6 +69449,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerHealth
   maxHealth: 100
+  damageCooldown: 0.2
   healthSlider: {fileID: 1997047897}
   gameOverUIScript: {fileID: 1587482807}
   screenShakeScript: {fileID: 917330462}

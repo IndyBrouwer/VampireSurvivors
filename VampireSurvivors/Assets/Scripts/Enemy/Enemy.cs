@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -11,13 +12,14 @@ public class Enemy : MonoBehaviour, IDamageable, IDroppable, ILevelable
 
     private bool isDead = false;
 
-    [Header("Needed Components")]
+    [Header("Required Components")]
     private Sprite sprite;
+    private Animator animator;
 
     private IEnemyBehaviour enemyBehaviour;
     private Dictionary<DropData, float> dropPairs = new Dictionary<DropData, float>();
 
-    [Header("Other Scripts")]
+    [Header("Required Scripts")]
     private DamageEffect damageEffectScript;
 
     private void Awake()
@@ -32,6 +34,8 @@ public class Enemy : MonoBehaviour, IDamageable, IDroppable, ILevelable
         }
 
         sprite = GetComponent<SpriteRenderer>().sprite;
+        animator = GetComponent<Animator>();
+        damageEffectScript = GetComponent<DamageEffect>();
 
         SetupEnemy();
     }
@@ -43,8 +47,6 @@ public class Enemy : MonoBehaviour, IDamageable, IDroppable, ILevelable
 
         maxHealth = enemyData.health;
         currentHealth = maxHealth;
-
-        damageEffectScript = GetComponent<DamageEffect>();
     }
 
     public void LevelUp()
@@ -76,8 +78,6 @@ public class Enemy : MonoBehaviour, IDamageable, IDroppable, ILevelable
     {
         //Damage vfx
         damageEffectScript.DamageColorEffect(GetComponent<SpriteRenderer>());
-
-        //Damage animation
 
         currentHealth -= damage;
 
@@ -117,9 +117,19 @@ public class Enemy : MonoBehaviour, IDamageable, IDroppable, ILevelable
     public void Die()
     {
         //Death animation || explosion/poof effect
+        animator.SetTrigger("Die");
+
+        StartCoroutine(WaitForDeathAnimation());
+    }
+
+    private IEnumerator WaitForDeathAnimation()
+    {
+        //Wait for the death animation to finish
+        yield return new WaitForSeconds(animator.GetCurrentAnimatorStateInfo(0).length);
 
         Drop();
 
+        //Destroy the enemy game object
         Destroy(gameObject);
     }
 }

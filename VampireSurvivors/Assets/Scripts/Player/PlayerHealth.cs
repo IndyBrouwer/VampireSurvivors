@@ -9,16 +9,16 @@ public class PlayerHealth : MonoBehaviour, IDamageable
     private float currentHealth;
 
     [Header("Damage Settings")]
+    [SerializeField] private float damageCooldown = 0.2f;
     private bool canTakeDamage = true;
-    private float damageCooldown = 0.25f;
 
     [Header("UI")]
     [SerializeField] private Slider healthSlider;
 
-    [Header("Components")]
+    [Header("Required Components")]
     private Animator animator;
 
-    [Header("Other Scripts")]
+    [Header("Required Scripts")]
     [SerializeField] private GameOverUI gameOverUIScript;
     [SerializeField] private ScreenShake screenShakeScript;
     private DamageEffect damageEffectScript;
