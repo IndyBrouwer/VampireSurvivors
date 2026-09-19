@@ -1,3 +1,5 @@
+using UnityEngine;
+
 public interface IDamageable
 {
     public void TakeDamage(float damage);
@@ -6,7 +8,7 @@ public interface IDamageable
 
 public interface IEnemyBehaviour
 {
-    public void Initialize(EnemyData enemyData);
+    public void Initialize(EnemyData enemyData, Transform playerPos);
     public void Move();
 }
 

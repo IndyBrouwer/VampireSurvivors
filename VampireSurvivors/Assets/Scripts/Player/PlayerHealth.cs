@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -7,6 +8,10 @@ public class PlayerHealth : MonoBehaviour, IDamageable
     [SerializeField] private float maxHealth = 100f;
     private float currentHealth;
 
+    [Header("Damage Settings")]
+    private bool canTakeDamage = true;
+    private float damageCooldown = 0.25f;
+
     [Header("UI")]
     [SerializeField] private Slider healthSlider;
 
@@ -15,12 +20,13 @@ public class PlayerHealth : MonoBehaviour, IDamageable
 
     [Header("Other Scripts")]
     [SerializeField] private GameOverUI gameOverUIScript;
-    [SerializeField] private DamageEffect damageEffectScript;
     [SerializeField] private ScreenShake screenShakeScript;
+    private DamageEffect damageEffectScript;
 
     private void Start()
     {
         animator = GetComponent<Animator>();
+        damageEffectScript = GetComponent<DamageEffect>();
 
         currentHealth = maxHealth;
 
@@ -45,9 +51,17 @@ public class PlayerHealth : MonoBehaviour, IDamageable
 
     public void TakeDamage(float damage)
     {
+        if (!canTakeDamage)
+        {
+            return;
+        }
+        
+        canTakeDamage = false;
+
         //Damage vfx
         damageEffectScript.DamageColorEffect(GetComponent<SpriteRenderer>());
 
+        //Apply damage
         currentHealth -= damage;
         
         //Ensure that currentHealth does not go below 0
@@ -63,6 +77,9 @@ public class PlayerHealth : MonoBehaviour, IDamageable
 
             Die();
         }
+
+        //Start cooldown coroutine
+        StartCoroutine(WaitDamageCooldown());
     }
 
     public void Die()
@@ -77,5 +94,12 @@ public class PlayerHealth : MonoBehaviour, IDamageable
 
         //Trigger game over screen (UI)
         gameOverUIScript.ShowGameOverUI();
+    }
+
+    private IEnumerator WaitDamageCooldown()
+    {
+        yield return new WaitForSeconds(damageCooldown);
+
+        canTakeDamage = true;
     }
 }

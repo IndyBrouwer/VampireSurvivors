@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class DamageEffect : MonoBehaviour
 {
-    public float damageDuration = 0.3f;
+    public float damageDuration = 0.2f;
 
     private SpriteRenderer spriteRenderer;
     private Color originalColor;

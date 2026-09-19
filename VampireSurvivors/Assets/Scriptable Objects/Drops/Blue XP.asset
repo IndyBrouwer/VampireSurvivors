@@ -15,7 +15,6 @@ MonoBehaviour:
   dropName: Blue XP
   dropType: 2
   description: A collectable the player needs to level up.
-  sprite: {fileID: 0}
+  sprite: {fileID: 5302542611280097109, guid: 7ff80ff0618470e45b3adef3166d7938, type: 3}
   prefab: {fileID: 0}
   dropRate: 0.8
-  dropAmount: 1

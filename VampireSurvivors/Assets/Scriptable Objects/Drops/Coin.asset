@@ -15,7 +15,6 @@ MonoBehaviour:
   dropName: Gold Coin
   dropType: 1
   description: A currency for the player to buy permanent upgrades with.
-  sprite: {fileID: 0}
+  sprite: {fileID: 6794766197818115193, guid: 7ff80ff0618470e45b3adef3166d7938, type: 3}
   prefab: {fileID: 0}
   dropRate: 0.25
-  dropAmount: 1

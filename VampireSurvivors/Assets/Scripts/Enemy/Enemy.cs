@@ -4,6 +4,7 @@ using UnityEngine;
 public class Enemy : MonoBehaviour, IDamageable, IDroppable, ILevelable
 {
     [SerializeField] private EnemyData enemyData;
+    private Transform playerPosition;
 
     private float maxHealth;
     private float currentHealth;
@@ -17,13 +18,13 @@ public class Enemy : MonoBehaviour, IDamageable, IDroppable, ILevelable
     private Dictionary<DropData, float> dropPairs = new Dictionary<DropData, float>();
 
     [Header("Other Scripts")]
-    [SerializeField] private DamageEffect damageEffectScript;
+    private DamageEffect damageEffectScript;
 
     private void Awake()
     {
         if (TryGetComponent<IEnemyBehaviour>(out enemyBehaviour))
         {
-            enemyBehaviour.Initialize(enemyData);
+            enemyBehaviour.Initialize(enemyData, playerPosition);
         }
         else
         {
@@ -42,6 +43,8 @@ public class Enemy : MonoBehaviour, IDamageable, IDroppable, ILevelable
 
         maxHealth = enemyData.health;
         currentHealth = maxHealth;
+
+        damageEffectScript = GetComponent<DamageEffect>();
     }
 
     public void LevelUp()
@@ -60,7 +63,7 @@ public class Enemy : MonoBehaviour, IDamageable, IDroppable, ILevelable
         enemyBehaviour.Move();
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerStay2D(Collider2D collision)
     {
         //Attack player using IDamageable interface
         if (collision.CompareTag("Player") && collision.TryGetComponent<IDamageable>(out IDamageable damageable))
@@ -113,7 +116,7 @@ public class Enemy : MonoBehaviour, IDamageable, IDroppable, ILevelable
 
     public void Die()
     {
-        //Death animation
+        //Death animation || explosion/poof effect
 
         Drop();
 

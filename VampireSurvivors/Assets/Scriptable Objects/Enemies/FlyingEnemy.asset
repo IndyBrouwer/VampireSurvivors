@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce740a64ea59a4043be479002addc443, type: 3}
   m_Name: FlyingEnemy
   m_EditorClassIdentifier: Assembly-CSharp::EnemyData
-  enemyName: Crow
-  sprite: {fileID: 0}
+  enemyName: Bat
+  sprite: {fileID: -4713757780111244303, guid: 4e862fdded645fe42812cb4d5d8af316, type: 3}
   health: 5
-  speed: 0
+  speed: 3
   damage: 10
   attackCooldown: 0.25
   dropRate: 0.75
@@ -23,4 +23,4 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 9b937da0d70b613498538fa7390802e2, type: 2}
   - {fileID: 11400000, guid: 8af723d16af4e4a41bd677465e7e8949, type: 2}
   xpAmount: 1
-  goldDropAmount: 1
+  goldAmount: 0
