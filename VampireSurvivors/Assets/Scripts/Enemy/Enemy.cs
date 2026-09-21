@@ -5,7 +5,6 @@ using UnityEngine;
 public class Enemy : MonoBehaviour, IDamageable, IDroppable, ILevelable
 {
     [SerializeField] private EnemyData enemyData;
-    private Transform playerPosition;
 
     private float maxHealth;
     private float currentHealth;
@@ -25,6 +24,15 @@ public class Enemy : MonoBehaviour, IDamageable, IDroppable, ILevelable
 
     private void Awake()
     {
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        animator = GetComponent<Animator>();
+        damageEffectScript = GetComponent<DamageEffect>();
+
+        SetupEnemy();
+    }
+
+    public void InitializeEnemy(Transform playerPosition)
+    {
         if (TryGetComponent<IEnemyBehaviour>(out enemyBehaviour))
         {
             enemyBehaviour.Initialize(enemyData, playerPosition);
@@ -33,12 +41,6 @@ public class Enemy : MonoBehaviour, IDamageable, IDroppable, ILevelable
         {
             Debug.LogWarning("EnemyBehaviour component not found on " + gameObject.name);
         }
-
-        spriteRenderer = GetComponent<SpriteRenderer>();
-        animator = GetComponent<Animator>();
-        damageEffectScript = GetComponent<DamageEffect>();
-
-        SetupEnemy();
     }
 
     private void SetupEnemy()
@@ -128,6 +130,8 @@ public class Enemy : MonoBehaviour, IDamageable, IDroppable, ILevelable
 
     public void Die()
     {
+        //Add kill to kill counter
+
         //Death animation || explosion/poof effect
         animator.SetTrigger("Die");
 
