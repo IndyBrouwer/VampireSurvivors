@@ -33,4 +33,19 @@ public class WalkerBehaviour : MonoBehaviour, IEnemyBehaviour
         //Move towards player
         rb.linearVelocity = new Vector2(direction.x, direction.y) * speed;
     }
+
+    //Already being called by enemy script
+    public void UpdateAnimation(SpriteRenderer spriteRenderer)
+    {
+        if (rb.linearVelocity.x > 0)
+        {
+            //Look Right
+            spriteRenderer.flipX = false;
+        }
+        else if (rb.linearVelocity.x < 0)
+        {
+            //Look Left
+            spriteRenderer.flipX = true;
+        }
+    }
 }

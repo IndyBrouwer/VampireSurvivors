@@ -38,6 +38,24 @@ TextureImporter:
   - first:
       213: 7301350183773318251
     second: 16x16 Void Orb_11
+  - first:
+      213: -3469912530158228802
+    second: 16x16 Void Orb_12
+  - first:
+      213: 279812888878757049
+    second: 16x16 Void Orb_13
+  - first:
+      213: -7407884078005481699
+    second: 16x16 Void Orb_14
+  - first:
+      213: -1185764972747478342
+    second: 16x16 Void Orb_15
+  - first:
+      213: -8154208943133748522
+    second: 16x16 Void Orb_16
+  - first:
+      213: 5135507177633261764
+    second: 16x16 Void Orb_17
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -413,7 +431,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 42114735c6fb86b4ab852ef473dd9c4f
+    spriteID: a0c8f3f34d627924eafa1bab38a04d97
     internalID: 0
     vertices: []
     indices: 

@@ -16,5 +16,5 @@ MonoBehaviour:
   dropType: 2
   description: A collectable the player needs to level up.
   sprite: {fileID: 4884464744734906140, guid: cf01bdea0292f5c4b90a762d0e87c906, type: 3}
-  prefab: {fileID: 0}
+  prefab: {fileID: 5128270278704571516, guid: a9f1336241b72394ebd448f553b5a253, type: 3}
   dropRate: 0.8

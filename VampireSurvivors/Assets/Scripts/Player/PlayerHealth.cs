@@ -1,12 +1,14 @@
+using Cinemachine;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class PlayerHealth : MonoBehaviour, IDamageable
+public class PlayerHealth : MonoBehaviour, IDamageable, IRegenerable
 {
     [Header("Health Settings")]
     [SerializeField] private float maxHealth = 100f;
     private float currentHealth;
+    private bool isDead = false;
 
     [Header("Damage Settings")]
     [SerializeField] private float damageCooldown = 0.2f;
@@ -17,6 +19,7 @@ public class PlayerHealth : MonoBehaviour, IDamageable
 
     [Header("Required Components")]
     private Animator animator;
+    private CinemachineImpulseSource impulseSource;
 
     [Header("Required Scripts")]
     [SerializeField] private GameOverUI gameOverUIScript;
@@ -27,6 +30,7 @@ public class PlayerHealth : MonoBehaviour, IDamageable
     {
         animator = GetComponent<Animator>();
         damageEffectScript = GetComponent<DamageEffect>();
+        impulseSource = GetComponent<CinemachineImpulseSource>();
 
         currentHealth = maxHealth;
 
@@ -38,9 +42,9 @@ public class PlayerHealth : MonoBehaviour, IDamageable
         healthSlider.value = currentHealth;
     }
 
-    public void Heal(float amount)
+    public void Heal(float healAmount)
     {
-        currentHealth += amount;
+        currentHealth += healAmount;
 
         //Ensure that currentHealth does not exceed maxHealth
         currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
@@ -72,6 +76,13 @@ public class PlayerHealth : MonoBehaviour, IDamageable
 
         if (currentHealth <= 0)
         {
+            if (isDead)
+            {
+                return;
+            }
+
+            isDead = true;
+
             //Disable slider fill
             healthSlider.fillRect.gameObject.SetActive(false);
 
@@ -86,11 +97,13 @@ public class PlayerHealth : MonoBehaviour, IDamageable
     {
         Debug.Log("Player has died.");
 
-        //Shake screen effect
-        screenShakeScript.CamShake();
-
         //Trigger death animation
         animator.SetTrigger("Die");
+
+        //Wait for player to lie flat?!
+
+        //Shake screen effect
+        screenShakeScript.CamShake(impulseSource);
 
         //Trigger game over screen (UI)
         gameOverUIScript.ShowGameOverUI();

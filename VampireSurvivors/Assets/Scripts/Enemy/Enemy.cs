@@ -13,10 +13,11 @@ public class Enemy : MonoBehaviour, IDamageable, IDroppable, ILevelable
     private bool isDead = false;
 
     [Header("Required Components")]
-    private Sprite sprite;
+    private SpriteRenderer spriteRenderer;
     private Animator animator;
 
     private IEnemyBehaviour enemyBehaviour;
+    private ICollectable collectable;
     private Dictionary<DropData, float> dropPairs = new Dictionary<DropData, float>();
 
     [Header("Required Scripts")]
@@ -33,7 +34,7 @@ public class Enemy : MonoBehaviour, IDamageable, IDroppable, ILevelable
             Debug.LogWarning("EnemyBehaviour component not found on " + gameObject.name);
         }
 
-        sprite = GetComponent<SpriteRenderer>().sprite;
+        spriteRenderer = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
         damageEffectScript = GetComponent<DamageEffect>();
 
@@ -43,7 +44,7 @@ public class Enemy : MonoBehaviour, IDamageable, IDroppable, ILevelable
     private void SetupEnemy()
     {
         gameObject.name = enemyData.enemyName;
-        sprite = enemyData.sprite;
+        spriteRenderer.sprite = enemyData.sprite;
 
         maxHealth = enemyData.health;
         currentHealth = maxHealth;
@@ -63,6 +64,8 @@ public class Enemy : MonoBehaviour, IDamageable, IDroppable, ILevelable
     {
         //Call the move function from the enemy behaviour script
         enemyBehaviour.Move();
+
+        enemyBehaviour.UpdateAnimation(spriteRenderer);
     }
 
     private void OnTriggerStay2D(Collider2D collision)
@@ -91,26 +94,35 @@ public class Enemy : MonoBehaviour, IDamageable, IDroppable, ILevelable
     public void Drop()
     {
         //Decide if enemy will drop an item or not
-        if (Random.value <= enemyData.dropRate)
+        //if (Random.value <= enemyData.dropRate)
+        //{
+        //    foreach (DropData drop in enemyData.possibleDrops)
+        //    {
+        //        if (DropType.XP == drop.dropType)
+        //        {
+        //            dropPairs.Add(drop, enemyData.xpAmount);
+        //        }
+        //        else if (DropType.Gold == drop.dropType)
+        //        {
+        //            dropPairs.Add(drop, enemyData.goldAmount);
+        //        }
+        //    }
+
+        //    //Decide if it will be xp or gold
+
+        //    //Drop decided item with their amount
+
+        //    //Instantiate the item prefab at the enemy's position
+        //    //Instantiate(drop.prefab, transform.position, Quaternion.identity);
+        //}
+
+        //Temp just drop the first drop
+        GameObject droppedItem = Instantiate(enemyData.possibleDrops[0].prefab, transform.position, Quaternion.identity);
+
+        //Initialize dropped item
+        if (droppedItem.TryGetComponent<ICollectable>(out collectable))
         {
-            foreach (DropData drop in enemyData.possibleDrops)
-            {
-                if (DropType.XP == drop.dropType)
-                {
-                    dropPairs.Add(drop, enemyData.xpAmount);
-                }
-                else if (DropType.Gold == drop.dropType)
-                {
-                    dropPairs.Add(drop, enemyData.goldAmount);
-                }
-            }
-
-            //Decide if it will be xp or gold
-
-            //Drop decided item with their amount
-
-            //Instantiate the item prefab at the enemy's position
-            //Instantiate(drop.prefab, transform.position, Quaternion.identity);
+            collectable.Initialize(enemyData.xpAmount);
         }
     }
 
@@ -124,10 +136,10 @@ public class Enemy : MonoBehaviour, IDamageable, IDroppable, ILevelable
 
     private IEnumerator WaitForDeathAnimation()
     {
+        Drop();
+
         //Wait for the death animation to finish
         yield return new WaitForSeconds(animator.GetCurrentAnimatorStateInfo(0).length);
-
-        Drop();
 
         //Destroy the enemy game object
         Destroy(gameObject);
