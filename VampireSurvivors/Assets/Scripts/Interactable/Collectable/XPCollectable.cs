@@ -23,6 +23,6 @@ public class XPCollectable : MonoBehaviour, ICollectable
         //Add xp amount to player
 
 
-        Destroy(gameObject);
+        PoolManager.Instance.EnQueuePoolObject(gameObject);
     }
 }

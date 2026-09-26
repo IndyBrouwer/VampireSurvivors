@@ -14,6 +14,9 @@ TextureImporter:
   - first:
       213: 5871764624039248685
     second: 16x16 Vampire Survivors Drops_3
+  - first:
+      213: 7406214417141339960
+    second: 16x16 Vampire Survivors Drops_4
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -209,11 +212,33 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: 16x16 Vampire Survivors Drops_4
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8371618c5c828c660800000000000000
+      internalID: 7406214417141339960
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 3b68b5063e7d42e42ab3f04e0a15a9aa
+    spriteID: 1faa68ba7d7bea349aad8c1790f55264
     internalID: 0
     vertices: []
     indices: 
@@ -229,6 +254,7 @@ TextureImporter:
       16x16 Vampire Survivors Drops_1: -7460039049260190233
       16x16 Vampire Survivors Drops_2: -3455519680241181349
       16x16 Vampire Survivors Drops_3: 5871764624039248685
+      16x16 Vampire Survivors Drops_4: 7406214417141339960
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

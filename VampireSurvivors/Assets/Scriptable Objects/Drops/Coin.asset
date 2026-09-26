@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: Coin
   m_EditorClassIdentifier: Assembly-CSharp::DropData
   dropName: Gold Coin
+  dropID: drop_gold
   dropType: 1
   description: A currency for the player to buy permanent upgrades with.
-  sprite: {fileID: -3455519680241181349, guid: cf01bdea0292f5c4b90a762d0e87c906, type: 3}
+  sprite: {fileID: 5871764624039248685, guid: cf01bdea0292f5c4b90a762d0e87c906, type: 3}
   prefab: {fileID: 3193550734215118475, guid: 39621a7fc02b066429042b6f0a4df993, type: 3}
   dropRate: 0.25

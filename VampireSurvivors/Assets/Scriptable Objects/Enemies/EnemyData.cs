@@ -5,6 +5,7 @@ public class EnemyData : ScriptableObject
 {
     [Header("Enemy Identification")]
     public string enemyName;
+    public string enemyID;
     public GameObject prefab;
     public Sprite sprite;
 

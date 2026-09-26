@@ -11,14 +11,26 @@ public class WaveManager : MonoBehaviour
 
     private int currentWaveIndex = 0;
 
-    [Header("Enemy setup")]
-    [SerializeField] private Transform playerPosition;
 
     private void Start()
     {
+        WaveController();
+    }
+
+    public void WaveController()
+    {
         foreach (WaveData wave in waves)
         {
+            //Spawn the selected wave
             StartCoroutine(SpawnEnemy(wave));
+
+            //Progress the waves
+            currentWaveIndex++;
+
+            if (currentWaveIndex >= waves.Count)
+            {
+                currentWaveIndex = 0;
+            }
         }
     }
 
@@ -31,15 +43,20 @@ public class WaveManager : MonoBehaviour
             for (int index = 0; index < enemy.amount; index++)
             {
                 //Spawn enemy
-                GameObject spawnedEnemy = Instantiate(enemy.enemyData.prefab);
-
-                //Setup enemy
-                Enemy enemyScript = spawnedEnemy.GetComponent<Enemy>();
-                enemyScript.InitializeEnemy(playerPosition);
+                PoolManager.Instance.DeQueuePoolObject(enemy.enemyData.enemyID);    
+                
+                //Set enemy spawn location
 
                 //Wait for spawn delay
                 yield return new WaitForSeconds(wave.spawnDelay);
             }
         }
+
+        StartCoroutine(WaveDelay(wave));
+    }
+
+    private IEnumerator WaveDelay(WaveData wave)
+    {
+        yield return new WaitForSeconds(wave.waveDelay);
     }
 }

@@ -118,8 +118,11 @@ public class Enemy : MonoBehaviour, IDamageable, IDroppable, ILevelable
         //    //Instantiate(drop.prefab, transform.position, Quaternion.identity);
         //}
 
-        //Temp just drop the first drop
-        GameObject droppedItem = Instantiate(enemyData.possibleDrops[0].prefab, transform.position, Quaternion.identity);
+        //Temp; just drop the first drop
+        //GameObject droppedItem = Instantiate(enemyData.possibleDrops[0].prefab, transform.position, Quaternion.identity);
+        GameObject droppedItem = PoolManager.Instance.DeQueuePoolObject(enemyData.possibleDrops[0].dropID);
+
+        //Give drop the enemy location
 
         //Initialize dropped item
         if (droppedItem.TryGetComponent<ICollectable>(out collectable))
@@ -145,7 +148,17 @@ public class Enemy : MonoBehaviour, IDamageable, IDroppable, ILevelable
         //Wait for the death animation to finish
         yield return new WaitForSeconds(animator.GetCurrentAnimatorStateInfo(0).length);
 
-        //Destroy the enemy game object
-        Destroy(gameObject);
+        ResetEnemy();
+
+        //Set object inactive to reuse for another enemy
+        PoolManager.Instance.EnQueuePoolObject(gameObject);
+    }
+
+    private void ResetEnemy()
+    {
+        isDead = false;
+        currentHealth = maxHealth;
+
+        //Reset location?!
     }
 }

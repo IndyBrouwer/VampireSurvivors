@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: FlyingEnemy
   m_EditorClassIdentifier: Assembly-CSharp::EnemyData
   enemyName: Bat
+  enemyID: enemy_bat
   prefab: {fileID: 3526578558933544913, guid: 7db2847c00a451d48aee103b1dc418ee, type: 3}
   sprite: {fileID: -4713757780111244303, guid: 4e862fdded645fe42812cb4d5d8af316, type: 3}
   health: 5
