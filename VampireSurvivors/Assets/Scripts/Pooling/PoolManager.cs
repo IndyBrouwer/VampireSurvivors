@@ -19,7 +19,7 @@ public class PoolManager : MonoBehaviour
     public Dictionary<string, Queue<GameObject>> objectsDictionary;
 
     [Header("Enemy setup")]
-    [SerializeField] private Transform playerPosition;
+    [SerializeField] private Transform player;
 
     private void Awake()
     {
@@ -35,14 +35,14 @@ public class PoolManager : MonoBehaviour
         {
             Queue<GameObject> objectsPool = new Queue<GameObject>();
 
-            for (int index = 0; index < poolObjects.Count; index++)
+            for (int index = 0; index < item.amount; index++)
             {
                 GameObject poolObject = Instantiate(item.prefab, transform);
 
                 //Send player pos to enemy scripts
                 if (poolObject.TryGetComponent<Enemy>(out Enemy enemyScript))
                 {
-                    enemyScript.InitializeEnemy(playerPosition);
+                    enemyScript.InitializeEnemy(player);
                 }
 
                 //Set object active false
@@ -56,7 +56,7 @@ public class PoolManager : MonoBehaviour
     }
 
     //For putting objects active
-    public GameObject DeQueuePoolObject(string id)
+    public GameObject DeQueuePoolObject(string id, Vector2 position)
     {
         //Check list for the id match
         if (!objectsDictionary.ContainsKey(id))
@@ -65,6 +65,10 @@ public class PoolManager : MonoBehaviour
         }
 
         GameObject poolObject = objectsDictionary[id].Dequeue();
+
+        //Set position
+        poolObject.transform.position = position;
+
         poolObject.SetActive(true);
 
         objectsDictionary[id].Enqueue(poolObject);

@@ -248,7 +248,7 @@ MonoBehaviour:
     objectID: drop_health
     prefab: {fileID: 5724273640306514956, guid: 5596d41e2e9677c48852d4061682ea72, type: 3}
     amount: 2
-  playerPosition: {fileID: 1794624321}
+  player: {fileID: 1794624321}
 --- !u!4 &94232267
 Transform:
   m_ObjectHideFlags: 0
@@ -321,7 +321,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 158463168346371271, guid: 63017f68d7d790a438ef297fa83e796b, type: 3}
+  m_Sprite: {fileID: 7605445926179486361, guid: 63017f68d7d790a438ef297fa83e796b, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -703,7 +703,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 158463168346371271, guid: 63017f68d7d790a438ef297fa83e796b, type: 3}
+  m_Sprite: {fileID: 7605445926179486361, guid: 63017f68d7d790a438ef297fa83e796b, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2134,7 +2134,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 158463168346371271, guid: 63017f68d7d790a438ef297fa83e796b, type: 3}
+  m_Sprite: {fileID: 7605445926179486361, guid: 63017f68d7d790a438ef297fa83e796b, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2293,7 +2293,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 158463168346371271, guid: 63017f68d7d790a438ef297fa83e796b, type: 3}
+  m_Sprite: {fileID: 7605445926179486361, guid: 63017f68d7d790a438ef297fa83e796b, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3290,7 +3290,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 158463168346371271, guid: 63017f68d7d790a438ef297fa83e796b, type: 3}
+  m_Sprite: {fileID: 7605445926179486361, guid: 63017f68d7d790a438ef297fa83e796b, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3786,7 +3786,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 158463168346371271, guid: 63017f68d7d790a438ef297fa83e796b, type: 3}
+  m_Sprite: {fileID: 7605445926179486361, guid: 63017f68d7d790a438ef297fa83e796b, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3898,7 +3898,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 158463168346371271, guid: 63017f68d7d790a438ef297fa83e796b, type: 3}
+  m_Sprite: {fileID: 7605445926179486361, guid: 63017f68d7d790a438ef297fa83e796b, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -4505,7 +4505,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 158463168346371271, guid: 63017f68d7d790a438ef297fa83e796b, type: 3}
+  m_Sprite: {fileID: 7605445926179486361, guid: 63017f68d7d790a438ef297fa83e796b, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -5776,6 +5776,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2140798293}
   - component: {fileID: 2140798294}
+  - component: {fileID: 2140798295}
   m_Layer: 0
   m_Name: Wave Manager
   m_TagString: Untagged
@@ -5813,6 +5814,21 @@ MonoBehaviour:
   waves:
   - {fileID: 11400000, guid: ef53aa74e6584f6488b3770d6ecc9f55, type: 2}
   - {fileID: 11400000, guid: 3c35ba7993eaba848a426d10bde9b36e, type: 2}
+  player: {fileID: 1794624321}
+--- !u!114 &2140798295
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2140798292}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84f0f17fe3b08a94294147cca59b78e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemySpawnPosition
+  mainCamera: {fileID: 519420031}
+  extraDistance: 2
 --- !u!1001 &3095648792723166370
 PrefabInstance:
   m_ObjectHideFlags: 0

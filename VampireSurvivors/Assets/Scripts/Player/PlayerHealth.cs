@@ -95,8 +95,6 @@ public class PlayerHealth : MonoBehaviour, IDamageable, IRegenerable
 
     public void Die()
     {
-        Debug.Log("Player has died.");
-
         //Trigger death animation
         animator.SetTrigger("Die");
 

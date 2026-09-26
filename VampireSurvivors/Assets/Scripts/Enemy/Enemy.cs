@@ -120,9 +120,7 @@ public class Enemy : MonoBehaviour, IDamageable, IDroppable, ILevelable
 
         //Temp; just drop the first drop
         //GameObject droppedItem = Instantiate(enemyData.possibleDrops[0].prefab, transform.position, Quaternion.identity);
-        GameObject droppedItem = PoolManager.Instance.DeQueuePoolObject(enemyData.possibleDrops[0].dropID);
-
-        //Give drop the enemy location
+        GameObject droppedItem = PoolManager.Instance.DeQueuePoolObject(enemyData.possibleDrops[0].dropID, this.transform.position);
 
         //Initialize dropped item
         if (droppedItem.TryGetComponent<ICollectable>(out collectable))

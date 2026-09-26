@@ -5,15 +5,20 @@ using UnityEngine;
 public class WaveManager : MonoBehaviour
 {
     [SerializeField] private List<WaveData> waves;
+    private int currentWaveIndex = 0;
 
     //Create copy of waves list, name it currentwaves.
     //Wave spawning will loop through this list again and again to create endless waves while not needing to create a ton of waves by hand.
 
-    private int currentWaveIndex = 0;
+    [SerializeField] private Transform player;
+
+    private EnemySpawnPosition spawnPositionScript;
 
 
     private void Start()
     {
+        spawnPositionScript = GetComponent<EnemySpawnPosition>();
+
         WaveController();
     }
 
@@ -24,13 +29,13 @@ public class WaveManager : MonoBehaviour
             //Spawn the selected wave
             StartCoroutine(SpawnEnemy(wave));
 
-            //Progress the waves
-            currentWaveIndex++;
-
             if (currentWaveIndex >= waves.Count)
             {
                 currentWaveIndex = 0;
             }
+
+            //Progress the waves
+            currentWaveIndex++;
         }
     }
 
@@ -42,10 +47,10 @@ public class WaveManager : MonoBehaviour
 
             for (int index = 0; index < enemy.amount; index++)
             {
+                Vector2 spawPosition = spawnPositionScript.GetSpawnPosition(player.position);
+
                 //Spawn enemy
-                PoolManager.Instance.DeQueuePoolObject(enemy.enemyData.enemyID);    
-                
-                //Set enemy spawn location
+                PoolManager.Instance.DeQueuePoolObject(enemy.enemyData.enemyID, spawPosition);
 
                 //Wait for spawn delay
                 yield return new WaitForSeconds(wave.spawnDelay);
