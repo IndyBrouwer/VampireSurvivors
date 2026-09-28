@@ -47,5 +47,7 @@ public interface IDespawnable
 
 public interface IWeaponBehaviour
 {
-    public void Attack();
+    public void Initialize(WeaponData scriptableObject, Weapon weaponBrainScript);
+
+    public void Fire();
 }

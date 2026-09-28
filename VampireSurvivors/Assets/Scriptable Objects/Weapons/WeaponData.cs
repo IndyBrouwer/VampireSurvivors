@@ -9,6 +9,7 @@ public class WeaponData : ScriptableObject
 
     [Header("Weapon Settings")]
     public float damage;
-    public float attackCooldown;
+    public float interval;
     public float moveSpeed;
+    public GameObject projectile;
 }

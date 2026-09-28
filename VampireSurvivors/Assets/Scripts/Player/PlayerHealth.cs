@@ -93,6 +93,11 @@ public class PlayerHealth : MonoBehaviour, IDamageable, IRegenerable
         StartCoroutine(WaitDamageCooldown());
     }
 
+    public bool CheckIfDead()
+    {
+        return isDead;
+    }
+
     public void Die()
     {
         //Trigger death animation

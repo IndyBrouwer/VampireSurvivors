@@ -22,5 +22,5 @@ MonoBehaviour:
   attackCooldown: 0
   dropRate: 0
   possibleDrops: []
-  xpAmount: 0
+  xpAmount: 1
   goldAmount: 0

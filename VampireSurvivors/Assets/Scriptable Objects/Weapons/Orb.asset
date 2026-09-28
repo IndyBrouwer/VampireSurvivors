@@ -10,10 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 795622e2ab622c846ba4d034c1928bf3, type: 3}
-  m_Name: Circling
+  m_Name: Orb
   m_EditorClassIdentifier: Assembly-CSharp::WeaponData
   weaponName: Void Orb
   sprite: {fileID: 7495905855217554638, guid: 5135541e47cedc04ca84585624b527ce, type: 3}
   damage: 50
-  attackCooldown: 0
+  interval: 5
   moveSpeed: 150
+  projectile: {fileID: 0}

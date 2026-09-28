@@ -21,6 +21,7 @@ public class Enemy : MonoBehaviour, IDamageable, IDroppable, ILevelable
 
     [Header("Required Scripts")]
     private DamageEffect damageEffectScript;
+    private KillCounter killCounterScript;
 
     private void Awake()
     {
@@ -31,7 +32,7 @@ public class Enemy : MonoBehaviour, IDamageable, IDroppable, ILevelable
         SetupEnemy();
     }
 
-    public void InitializeEnemy(Transform playerPosition)
+    public void InitializeEnemy(Transform playerPosition, KillCounter script)
     {
         if (TryGetComponent<IEnemyBehaviour>(out enemyBehaviour))
         {
@@ -41,6 +42,8 @@ public class Enemy : MonoBehaviour, IDamageable, IDroppable, ILevelable
         {
             Debug.LogWarning("EnemyBehaviour component not found on " + gameObject.name);
         }
+
+        killCounterScript = script;
     }
 
     private void SetupEnemy()
@@ -70,10 +73,10 @@ public class Enemy : MonoBehaviour, IDamageable, IDroppable, ILevelable
         enemyBehaviour.UpdateAnimation(spriteRenderer);
     }
 
-    private void OnTriggerStay2D(Collider2D collision)
+    private void OnCollisionStay2D(Collision2D collision)
     {
         //Attack player using IDamageable interface
-        if (collision.CompareTag("Player") && collision.TryGetComponent<IDamageable>(out IDamageable damageable))
+        if (collision.collider.CompareTag("Player") && collision.collider.TryGetComponent<IDamageable>(out IDamageable damageable))
         {
             damageable.TakeDamage(enemyData.damage);
         }
@@ -132,6 +135,7 @@ public class Enemy : MonoBehaviour, IDamageable, IDroppable, ILevelable
     public void Die()
     {
         //Add kill to kill counter
+        killCounterScript.IncreaseKillCount();
 
         //Death animation || explosion/poof effect
         animator.SetTrigger("Die");
@@ -156,7 +160,5 @@ public class Enemy : MonoBehaviour, IDamageable, IDroppable, ILevelable
     {
         isDead = false;
         currentHealth = maxHealth;
-
-        //Reset location?!
     }
 }

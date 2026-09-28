@@ -10,13 +10,13 @@ GameObject:
   m_Component:
   - component: {fileID: 7487546200071222863}
   - component: {fileID: 1238862538113103802}
-  - component: {fileID: 6809573878552125109}
+  - component: {fileID: 3395706303770044664}
   - component: {fileID: 8748457345037272910}
   - component: {fileID: 7246432367471913701}
   - component: {fileID: 783579368575777298}
   - component: {fileID: 7844590061132789670}
   - component: {fileID: 2310150057927921576}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Bat Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -84,9 +84,9 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: -1152566283
-  m_SortingLayer: 5
-  m_SortingOrder: 5
+  m_SortingLayerID: -391658257
+  m_SortingLayer: 6
+  m_SortingOrder: 10
   m_MaskInteraction: 0
   m_Sprite: {fileID: -4713757780111244303, guid: 4e862fdded645fe42812cb4d5d8af316, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -98,8 +98,8 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
---- !u!61 &6809573878552125109
-BoxCollider2D:
+--- !u!58 &3395706303770044664
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -118,32 +118,22 @@ BoxCollider2D:
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 0
   m_ForceReceiveLayers:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 192
   m_ContactCaptureLayers:
     serializedVersion: 2
     m_Bits: 4294967295
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.030938983, y: 0.07734668}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2, y: 2}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Size: {x: 1.4843547, y: 1.4843545}
-  m_EdgeRadius: 0
+  m_Offset: {x: 0.11490369, y: 0.13161719}
+  m_Radius: 0.5
 --- !u!50 &8748457345037272910
 Rigidbody2D:
   serializedVersion: 5
@@ -243,7 +233,7 @@ GameObject:
   - component: {fileID: 3632244458603028185}
   - component: {fileID: 4830037935884695066}
   - component: {fileID: 905613183466154489}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Damage Taken
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -381,7 +371,7 @@ GameObject:
   - component: {fileID: 6179859989597776630}
   - component: {fileID: 1843528153033557346}
   - component: {fileID: 4133383392919695308}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Enemy UI
   m_TagString: Untagged
   m_Icon: {fileID: 0}

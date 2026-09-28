@@ -12,10 +12,14 @@ public class PlayerMovement : MonoBehaviour
     private Vector2 moveInput;
     private Vector2 lastMoveDirection;
 
+    private PlayerHealth playerHealthScript;
+
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+
+        playerHealthScript = GetComponent<PlayerHealth>();
     }
 
     private void FixedUpdate()
@@ -42,6 +46,15 @@ public class PlayerMovement : MonoBehaviour
 
     private void MovePlayer()
     {
+        //Check if dead, yes then return
+        if (playerHealthScript.CheckIfDead() == true)
+        {
+            //Stop player from moving completely
+            rb.linearVelocity = Vector2.zero;
+
+            return;
+        }
+
         rb.linearVelocity = moveInput * moveSpeed;
     }
 

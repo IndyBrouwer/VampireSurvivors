@@ -1,39 +1,56 @@
+using System.Collections;
 using UnityEngine;
 
 public class OrbBehaviour : MonoBehaviour, IWeaponBehaviour
 {
-    [SerializeField] private WeaponData weaponData;
-    [SerializeField] private GameObject player;
+    private WeaponData weaponData;
+
+    [Header("Game Objects")]
+    [SerializeField] private GameObject orbWeapon;
 
     [Header("Orbit Settings")]
     [SerializeField] private float orbitOffset = 2f;
 
-    private IDamageable damageableObject;
+    private Animator orbAnimator;
 
-    private void Start()
+    [Header("Scripts")]
+    private Weapon weaponScript;
+
+    public void Initialize(WeaponData scriptableObject, Weapon weaponBrainScript)
     {
-        this.transform.position = player.transform.position + new Vector3(orbitOffset, 0, 0);
+        weaponData = scriptableObject;
+        weaponScript = weaponBrainScript;
+
+        orbWeapon.GetComponent<VoidOrb>().Initialize(weaponData);
+        orbAnimator = orbWeapon.GetComponent<Animator>();
     }
 
-    private void FixedUpdate()
+    public void Fire()
     {
-        transform.RotateAround(player.transform.position, Vector3.forward, weaponData.moveSpeed * Time.fixedDeltaTime);
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.TryGetComponent<IDamageable>(out damageableObject) && !collision.CompareTag("Player"))
+        if (orbWeapon.activeSelf)
         {
-            Attack();
+            //Disable collider?!
+
+            orbAnimator.SetTrigger("Despawn");
+
+            //Wait for anim
+            StartCoroutine(WaitForAnim());
         }
         else
         {
-            Debug.LogWarning("IDamageable component not found on " + gameObject.name);
+            //spawning in
+            orbWeapon.SetActive(!orbWeapon.activeSelf);
         }
     }
 
-    public void Attack()
+    private IEnumerator WaitForAnim()
     {
-        damageableObject.TakeDamage(weaponData.damage);
+        //Wait for the length of orb_despawn anim
+        yield return new WaitForSeconds(0.68f);
+        
+        //Despawn
+        orbWeapon.SetActive(!orbWeapon.activeSelf);
     }
+
+    //For increase in orbs for levels. Get a full circle, then devide it by the amount of orbs there are supposed to be to get their position.
 }

@@ -20,6 +20,7 @@ public class PoolManager : MonoBehaviour
 
     [Header("Enemy setup")]
     [SerializeField] private Transform player;
+    [SerializeField] private KillCounter killCounterScript;
 
     private void Awake()
     {
@@ -42,7 +43,7 @@ public class PoolManager : MonoBehaviour
                 //Send player pos to enemy scripts
                 if (poolObject.TryGetComponent<Enemy>(out Enemy enemyScript))
                 {
-                    enemyScript.InitializeEnemy(player);
+                    enemyScript.InitializeEnemy(player, killCounterScript);
                 }
 
                 //Set object active false
