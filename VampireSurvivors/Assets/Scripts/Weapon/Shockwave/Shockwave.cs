@@ -79,6 +79,7 @@ public class Shockwave : MonoBehaviour
         damageableObject.TakeDamage(weaponData.damage);
     }
 
+    //Visuals for damage circles while game is running
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.purple;

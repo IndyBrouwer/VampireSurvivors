@@ -173,6 +173,14 @@ MonoBehaviour:
     objectID: drop_health
     prefab: {fileID: 5724273640306514956, guid: 5596d41e2e9677c48852d4061682ea72, type: 3}
     amount: 2
+  - objectName: Bullet
+    objectID: weapon_nearest
+    prefab: {fileID: 3473899143075633819, guid: b364907d19b290e4c807caf92c9968a7, type: 3}
+    amount: 10
+  - objectName: Axe
+    objectID: weapon_gravity
+    prefab: {fileID: 3473899143075633819, guid: b364907d19b290e4c807caf92c9968a7, type: 3}
+    amount: 5
   player: {fileID: 1794624321}
   killCounterScript: {fileID: 802051486}
 --- !u!4 &94232267
@@ -2688,37 +2696,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1037258483}
   m_CullTransparentMesh: 1
---- !u!1 &1070848481
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1070848482}
-  m_Layer: 6
-  m_Name: Shooting Weapon
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1070848482
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1070848481}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1542013566}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1076938171
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2899,7 +2876,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::OrbBehaviour
   orbWeapon: {fileID: 444657676}
-  orbitOffset: 2
 --- !u!114 &1126221193
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3623,6 +3599,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1542013566}
+  - component: {fileID: 1542013568}
+  - component: {fileID: 1542013567}
   m_Layer: 6
   m_Name: Shooting Controller
   m_TagString: Untagged
@@ -3642,10 +3620,36 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1070848482}
+  m_Children: []
   m_Father: {fileID: 1794624321}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1542013567
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1542013565}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52422e3bcad70ec49b3f74bacad86b91, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NearestBehaviour
+  maxRadius: 18
+  bulletPrefab: {fileID: 3473899143075633819, guid: b364907d19b290e4c807caf92c9968a7, type: 3}
+--- !u!114 &1542013568
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1542013565}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd1dcb6e0ce5d5d4f8f4be293c1465a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Weapon
+  weaponData: {fileID: 11400000, guid: 1cf7911bd550434419dc6cb8338254a0, type: 2}
 --- !u!1 &1587482805
 GameObject:
   m_ObjectHideFlags: 0
@@ -4205,8 +4209,8 @@ Transform:
   - {fileID: 1464239611}
   - {fileID: 1126221191}
   - {fileID: 442287038}
-  - {fileID: 2023376748}
   - {fileID: 1542013566}
+  - {fileID: 2023376748}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &1794624322
@@ -4404,7 +4408,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.0009061098, y: 0.032616347}
+  m_Offset: {x: -0.0009061098, y: -0.14288077}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -4414,7 +4418,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.7529228, y: 1.4491603}
+  m_Size: {x: 0.7529228, y: 1.098166}
   m_EdgeRadius: 0
 --- !u!114 &1794624329
 MonoBehaviour:

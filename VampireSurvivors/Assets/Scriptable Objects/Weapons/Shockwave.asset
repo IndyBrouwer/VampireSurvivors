@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Shockwave
   m_EditorClassIdentifier: Assembly-CSharp::WeaponData
   weaponName: Shockwave
+  weaponID: weapon_shockwave
   sprite: {fileID: 0}
   damage: 70
   interval: 3

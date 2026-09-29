@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: Nearest Projectile
   m_EditorClassIdentifier: Assembly-CSharp::WeaponData
   weaponName: Shooting Star
+  weaponID: weapon_nearest
   sprite: {fileID: 0}
   damage: 50
   interval: 1
-  moveSpeed: 100
+  moveSpeed: 7
   projectile: {fileID: 3473899143075633819, guid: b364907d19b290e4c807caf92c9968a7, type: 3}

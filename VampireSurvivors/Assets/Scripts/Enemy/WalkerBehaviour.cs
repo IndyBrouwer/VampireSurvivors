@@ -28,8 +28,6 @@ public class WalkerBehaviour : MonoBehaviour, IEnemyBehaviour
         //Calculate direction towards player
         Vector2 direction = (playerPosition.position - transform.position).normalized;
 
-        //rb.MovePosition(rb.position + direction * speed * Time.fixedDeltaTime);
-
         //Move towards player
         rb.linearVelocity = new Vector2(direction.x, direction.y) * speed;
     }

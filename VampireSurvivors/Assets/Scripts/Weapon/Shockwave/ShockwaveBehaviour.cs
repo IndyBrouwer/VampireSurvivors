@@ -47,15 +47,6 @@ public class ShockwaveBehaviour : MonoBehaviour, IWeaponBehaviour
         }
     }
 
-    private void Attack()
-    {
-        //If shockwaveActive != true, return
-        //(Can only deal damage while shockwaveActive is true)!!
-
-        //Send out shock and deal damage
-        Debug.Log("Shockwave fired");
-    }
-
     public bool IsShockwaveActive()
     {
         return shockwaveActive;

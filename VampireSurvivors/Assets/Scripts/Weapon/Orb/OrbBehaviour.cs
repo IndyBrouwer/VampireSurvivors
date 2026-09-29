@@ -8,9 +8,6 @@ public class OrbBehaviour : MonoBehaviour, IWeaponBehaviour
     [Header("Game Objects")]
     [SerializeField] private GameObject orbWeapon;
 
-    [Header("Orbit Settings")]
-    [SerializeField] private float orbitOffset = 2f;
-
     private Animator orbAnimator;
 
     [Header("Scripts")]
@@ -38,7 +35,7 @@ public class OrbBehaviour : MonoBehaviour, IWeaponBehaviour
         }
         else
         {
-            //spawning in
+            //Spawning in
             orbWeapon.SetActive(!orbWeapon.activeSelf);
         }
     }
