@@ -14,14 +14,14 @@ public class CoinCollectable : MonoBehaviour, ICollectable
     {
         if (collision.CompareTag("Collector"))
         {
-            Collect();
+            Collect(collision.gameObject);
         }
     }
 
-    public void Collect()
+    public void Collect(GameObject collector)
     {
         //Add amount of coins to player wallet
-
+        collector.GetComponentInParent<PlayerWallet>().AddCoins(heldAmount);
 
         Destroy(gameObject);
     }

@@ -26,7 +26,7 @@ public interface IDroppable
 public interface ICollectable
 {
     public void Initialize(float droppedAmount);
-    public void Collect();
+    public void Collect(GameObject player);
 }
 
 public interface ILevelable

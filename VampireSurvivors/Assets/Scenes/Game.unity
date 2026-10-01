@@ -1023,7 +1023,7 @@ GameObject:
   - component: {fileID: 482344962}
   - component: {fileID: 482344963}
   m_Layer: 5
-  m_Name: Slider
+  m_Name: XP Slider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4124,8 +4124,8 @@ GameObject:
   - component: {fileID: 1794624327}
   - component: {fileID: 1794624323}
   - component: {fileID: 1794624326}
-  - component: {fileID: 1794624329}
   - component: {fileID: 1794624330}
+  - component: {fileID: 1794624332}
   - component: {fileID: 1794624331}
   m_Layer: 6
   m_Name: Player
@@ -4420,18 +4420,6 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.7529228, y: 1.098166}
   m_EdgeRadius: 0
---- !u!114 &1794624329
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1794624319}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 093826ec3f5a64245a8ca97eb2d5e963, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlayerAttack
 --- !u!114 &1794624330
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4498,6 +4486,20 @@ MonoBehaviour:
     m_DissipationDistance: 100
     m_PropagationSpeed: 343
   m_DefaultVelocity: {x: 0, y: -1, z: 0}
+--- !u!114 &1794624332
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1794624319}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2a586cff4fa77c4fbbb1afd73c65ede, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerLeveling
+  experienceSlider: {fileID: 482344963}
+  levelText: {fileID: 750458297}
 --- !u!1 &1882030897
 GameObject:
   m_ObjectHideFlags: 0

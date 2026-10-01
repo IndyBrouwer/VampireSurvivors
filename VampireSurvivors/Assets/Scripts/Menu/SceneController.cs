@@ -8,6 +8,11 @@ public class SceneController : MonoBehaviour
         SceneManager.LoadScene("Start");
     }
 
+    public void Shop()
+    {
+        SceneManager.LoadScene("Shop");
+    }
+
     public void StartGame()
     {
         SceneManager.LoadScene("Game");
@@ -16,6 +21,11 @@ public class SceneController : MonoBehaviour
     public void Settings()
     {
         SceneManager.LoadScene("Settings");
+    }
+
+    public void Credits()
+    {
+        SceneManager.LoadScene("Credits");
     }
 
     public void QuitGame()

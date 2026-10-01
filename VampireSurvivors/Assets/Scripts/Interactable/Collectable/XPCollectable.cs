@@ -14,14 +14,14 @@ public class XPCollectable : MonoBehaviour, ICollectable
     {
         if (collision.CompareTag("Collector"))
         {
-            Collect();
+            Collect(collision.gameObject);
         }
     }
 
-    public void Collect()
+    public void Collect(GameObject collector)
     {
         //Add xp amount to player
-
+        collector.GetComponentInParent<PlayerLeveling>().AddExperience(heldAmount);
 
         PoolManager.Instance.EnQueuePoolObject(gameObject);
     }

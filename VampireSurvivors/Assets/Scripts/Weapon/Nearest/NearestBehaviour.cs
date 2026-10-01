@@ -58,16 +58,6 @@ public class NearestBehaviour : MonoBehaviour, IWeaponBehaviour
         {
             CreateBullet(closestTarget.transform.position);
         }
-        else
-        {
-            //Create a random angle
-            float random = Random.Range(0f, 2 * Mathf.PI);
-
-            //Create a random direction with the created random angle
-            Vector2 randomDirecton = new Vector2(Mathf.Cos(random), Mathf.Sin(random));
-
-            CreateBullet(randomDirecton);
-        }
     }
 
     private void CreateBullet(Vector2 targetPosition)

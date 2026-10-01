@@ -14,14 +14,14 @@ public class HealthCollectable : MonoBehaviour, ICollectable
     {
         if (collision.CompareTag("Collector"))
         {
-            Collect();
+            Collect(collision.gameObject);
         }
     }
 
-    public void Collect()
+    public void Collect(GameObject collector)
     {
         //Add health to player
-
+        collector.GetComponentInParent<PlayerHealth>().Heal(healAmount);
 
         Destroy(gameObject);
     }
