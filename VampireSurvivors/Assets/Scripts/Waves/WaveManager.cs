@@ -4,39 +4,48 @@ using UnityEngine;
 
 public class WaveManager : MonoBehaviour
 {
+    [Header("Wave Settings")]
     [SerializeField] private List<WaveData> waves;
-    private int currentWaveIndex = 0;
-
-    //Create copy of waves list, name it currentwaves.
-    //Wave spawning will loop through this list again and again to create endless waves while not needing to create a ton of waves by hand.
-
     [SerializeField] private Transform player;
 
+    private int currentWaveIndex = 0;
+    private bool isSpawning = false;
+
+    [Header("Scripts")]
     private EnemySpawnPosition spawnPositionScript;
 
 
     private void Start()
     {
         spawnPositionScript = GetComponent<EnemySpawnPosition>();
-
-        WaveController();
     }
 
-    public void WaveController()
+    private void FixedUpdate()
     {
-        foreach (WaveData wave in waves)
+        if (isSpawning == false)
         {
-            //Spawn the selected wave
-            StartCoroutine(SpawnEnemy(wave));
-
-            if (currentWaveIndex >= waves.Count)
-            {
-                currentWaveIndex = 0;
-            }
-
-            //Progress the waves
-            currentWaveIndex++;
+            StartCoroutine(WaveController());
         }
+    }
+
+    public IEnumerator WaveController()
+    {
+        isSpawning = true;
+
+        Debug.Log("Current Wave: " + currentWaveIndex);
+
+        //Spawn the selected wave
+        yield return StartCoroutine(SpawnEnemy(waves[currentWaveIndex]));
+
+        //Progress the waves
+        currentWaveIndex++;
+
+        if (currentWaveIndex >= waves.Count)
+        {
+            currentWaveIndex = 0;
+        }
+
+        isSpawning = false;
     }
 
     private IEnumerator SpawnEnemy(WaveData wave)
@@ -47,21 +56,34 @@ public class WaveManager : MonoBehaviour
 
             for (int index = 0; index < enemy.amount; index++)
             {
-                Vector2 spawPosition = spawnPositionScript.GetSpawnPosition(player.position);
+                //Get the current center position
+                Vector2 center = new Vector2(player.position.x, player.position.y);
 
-                //Spawn enemy
-                PoolManager.Instance.DeQueuePoolObject(enemy.enemyData.enemyID, spawPosition);
+                //If tombstone enemy, call circlespawner function. Else spawn enemy at random position
+                if (enemy.enemyData.enemyID == "enemy_tombstone")
+                {
+                    Vector2 spawnPosition = spawnPositionScript.CircleSpawner(center, enemy.amount, index);
 
-                //Wait for spawn delay
-                yield return new WaitForSeconds(wave.spawnDelay);
+                    GameObject newEnemy = PoolManager.Instance.DeQueuePoolObject(enemy.enemyData.enemyID);
+                    newEnemy.transform.position = spawnPosition;
+                    newEnemy.transform.rotation = Quaternion.identity;
+                }
+                else
+                {
+                    Vector2 spawPosition = spawnPositionScript.GetSpawnPosition(center);
+
+                    //Spawn enemy
+                    GameObject newEnemy = PoolManager.Instance.DeQueuePoolObject(enemy.enemyData.enemyID);
+                    newEnemy.transform.position = spawPosition;
+                    newEnemy.transform.rotation = Quaternion.identity;
+
+                    //Wait for spawn delay
+                    yield return new WaitForSeconds(wave.spawnDelay);
+                }
             }
         }
 
-        StartCoroutine(WaveDelay(wave));
-    }
-
-    private IEnumerator WaveDelay(WaveData wave)
-    {
+        //Wait for wave spawning delay before starting the next wave
         yield return new WaitForSeconds(wave.waveDelay);
     }
 }

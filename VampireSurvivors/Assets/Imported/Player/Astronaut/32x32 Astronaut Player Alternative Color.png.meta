@@ -1,0 +1,1214 @@
+fileFormatVersion: 2
+guid: 5f495f188588ed54d8fcaa5d3b239c3c
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -82266066673462977
+    second: 32x32 Astronaut Player Alternative Color_0
+  - first:
+      213: -3825547833023702410
+    second: 32x32 Astronaut Player Alternative Color_1
+  - first:
+      213: 2739708504867709325
+    second: 32x32 Astronaut Player Alternative Color_2
+  - first:
+      213: 2984985011328875072
+    second: 32x32 Astronaut Player Alternative Color_3
+  - first:
+      213: 4562479843860327311
+    second: 32x32 Astronaut Player Alternative Color_4
+  - first:
+      213: 8907044454639878826
+    second: 32x32 Astronaut Player Alternative Color_5
+  - first:
+      213: -904729625670844998
+    second: 32x32 Astronaut Player Alternative Color_6
+  - first:
+      213: -5923675802102497902
+    second: 32x32 Astronaut Player Alternative Color_7
+  - first:
+      213: -752038008333647453
+    second: 32x32 Astronaut Player Alternative Color_8
+  - first:
+      213: 3147139145231829036
+    second: 32x32 Astronaut Player Alternative Color_9
+  - first:
+      213: -2396150151673907085
+    second: 32x32 Astronaut Player Alternative Color_10
+  - first:
+      213: -1755642837732611831
+    second: 32x32 Astronaut Player Alternative Color_11
+  - first:
+      213: -1874885827140835788
+    second: 32x32 Astronaut Player Alternative Color_12
+  - first:
+      213: 5023929012792358842
+    second: 32x32 Astronaut Player Alternative Color_13
+  - first:
+      213: -5350372133038036130
+    second: 32x32 Astronaut Player Alternative Color_14
+  - first:
+      213: -6843086547592141103
+    second: 32x32 Astronaut Player Alternative Color_15
+  - first:
+      213: -5684693135434177993
+    second: 32x32 Astronaut Player Alternative Color_16
+  - first:
+      213: 8123497906937018091
+    second: 32x32 Astronaut Player Alternative Color_17
+  - first:
+      213: -7934365233683892222
+    second: 32x32 Astronaut Player Alternative Color_18
+  - first:
+      213: 6718402770367053052
+    second: 32x32 Astronaut Player Alternative Color_19
+  - first:
+      213: -4883854378731904302
+    second: 32x32 Astronaut Player Alternative Color_20
+  - first:
+      213: -4275177113884878138
+    second: 32x32 Astronaut Player Alternative Color_21
+  - first:
+      213: -1880751329794753339
+    second: 32x32 Astronaut Player Alternative Color_22
+  - first:
+      213: 5613720162746004424
+    second: 32x32 Astronaut Player Alternative Color_23
+  - first:
+      213: 2428486353901695666
+    second: 32x32 Astronaut Player Alternative Color_24
+  - first:
+      213: -7590720554745652663
+    second: 32x32 Astronaut Player Alternative Color_25
+  - first:
+      213: -1764816502232347575
+    second: 32x32 Astronaut Player Alternative Color_26
+  - first:
+      213: -4261037055276749301
+    second: 32x32 Astronaut Player Alternative Color_27
+  - first:
+      213: 1576342866740129723
+    second: 32x32 Astronaut Player Alternative Color_28
+  - first:
+      213: -1904728327874937858
+    second: 32x32 Astronaut Player Alternative Color_29
+  - first:
+      213: 5491265695939405071
+    second: 32x32 Astronaut Player Alternative Color_30
+  - first:
+      213: -4085394561437482517
+    second: 32x32 Astronaut Player Alternative Color_31
+  - first:
+      213: -4505991090172842326
+    second: 32x32 Astronaut Player Alternative Color_32
+  - first:
+      213: -1459430163427928874
+    second: 32x32 Astronaut Player Alternative Color_33
+  - first:
+      213: 7647049313869694134
+    second: 32x32 Astronaut Player Alternative Color_34
+  - first:
+      213: -1266738347768872174
+    second: 32x32 Astronaut Player Alternative Color_35
+  - first:
+      213: 3200778908685475184
+    second: 32x32 Astronaut Player Alternative Color_36
+  - first:
+      213: -7804647349592920986
+    second: 32x32 Astronaut Player Alternative Color_37
+  - first:
+      213: -6606470214516406572
+    second: 32x32 Astronaut Player Alternative Color_38
+  - first:
+      213: -2601340013804790727
+    second: 32x32 Astronaut Player Alternative Color_39
+  - first:
+      213: -7780116641540911590
+    second: 32x32 Astronaut Player Alternative Color_40
+  - first:
+      213: 4687033172433342097
+    second: 32x32 Astronaut Player Alternative Color_41
+  - first:
+      213: -6031461742319402462
+    second: 32x32 Astronaut Player Alternative Color_42
+  - first:
+      213: -2016035138593135002
+    second: 32x32 Astronaut Player Alternative Color_43
+  - first:
+      213: -2286663819688274246
+    second: 32x32 Astronaut Player Alternative Color_44
+  - first:
+      213: 3532890178814223538
+    second: 32x32 Astronaut Player Alternative Color_45
+  - first:
+      213: 3232189883390431734
+    second: 32x32 Astronaut Player Alternative Color_46
+  - first:
+      213: -6069907515998060095
+    second: 32x32 Astronaut Player Alternative Color_47
+  - first:
+      213: -7302985924810272327
+    second: 32x32 Astronaut Player Alternative Color_48
+  - first:
+      213: 965055494799266210
+    second: 32x32 Astronaut Player Alternative Color_49
+  - first:
+      213: 7233882147406014864
+    second: 32x32 Astronaut Player Alternative Color_50
+  - first:
+      213: 7629154408020571880
+    second: 32x32 Astronaut Player Alternative Color_51
+  - first:
+      213: -6411475155030038918
+    second: 32x32 Astronaut Player Alternative Color_52
+  - first:
+      213: 7511795675675006941
+    second: 32x32 Astronaut Player Alternative Color_53
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: 32x32 Astronaut Player Alternative Color_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 288
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f311cdeb27bbbdef0800000000000000
+      internalID: -82266066673462977
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 32x32 Astronaut Player Alternative Color_1
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 288
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 67a5b55b38ce8eac0800000000000000
+      internalID: -3825547833023702410
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 32x32 Astronaut Player Alternative Color_2
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 288
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d81a1cc9e56650620800000000000000
+      internalID: 2739708504867709325
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 32x32 Astronaut Player Alternative Color_3
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 288
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 04a7f1c7d0ccc6920800000000000000
+      internalID: 2984985011328875072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 32x32 Astronaut Player Alternative Color_4
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 288
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f8bac24be3f215f30800000000000000
+      internalID: 4562479843860327311
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 32x32 Astronaut Player Alternative Color_5
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 288
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa24c6d6dbd2c9b70800000000000000
+      internalID: 8907044454639878826
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 32x32 Astronaut Player Alternative Color_6
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 288
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: abdfd1ce231c173f0800000000000000
+      internalID: -904729625670844998
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 32x32 Astronaut Player Alternative Color_7
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 288
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 29d7a133e30eacda0800000000000000
+      internalID: -5923675802102497902
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 32x32 Astronaut Player Alternative Color_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 256
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3a14ea77a693095f0800000000000000
+      internalID: -752038008333647453
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 32x32 Astronaut Player Alternative Color_9
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 256
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c28054ad062ecab20800000000000000
+      internalID: 3147139145231829036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 32x32 Astronaut Player Alternative Color_10
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 256
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3787af4e12a2fbed0800000000000000
+      internalID: -2396150151673907085
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 32x32 Astronaut Player Alternative Color_11
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 256
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9092d701424b2a7e0800000000000000
+      internalID: -1755642837732611831
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 32x32 Astronaut Player Alternative Color_12
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 256
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4362bd616411bf5e0800000000000000
+      internalID: -1874885827140835788
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 32x32 Astronaut Player Alternative Color_13
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 256
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ab77448b1d498b540800000000000000
+      internalID: 5023929012792358842
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 32x32 Astronaut Player Alternative Color_14
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 256
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e5b6e1a74e8afb5b0800000000000000
+      internalID: -5350372133038036130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 32x32 Astronaut Player Alternative Color_15
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 256
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1d6248b8a097801a0800000000000000
+      internalID: -6843086547592141103
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 32x32 Astronaut Player Alternative Color_16
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 224
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 732285d46b9eb11b0800000000000000
+      internalID: -5684693135434177993
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 32x32 Astronaut Player Alternative Color_17
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 224
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: be63c946e467cb070800000000000000
+      internalID: 8123497906937018091
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 32x32 Astronaut Player Alternative Color_18
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 224
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 208ff08abd873e190800000000000000
+      internalID: -7934365233683892222
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 32x32 Astronaut Player Alternative Color_19
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 224
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cfc7ab959bf8c3d50800000000000000
+      internalID: 6718402770367053052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 32x32 Astronaut Player Alternative Color_20
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 224
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2d2e2fc7150193cb0800000000000000
+      internalID: -4883854378731904302
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 32x32 Astronaut Player Alternative Color_21
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 224
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6ca1307d0158ba4c0800000000000000
+      internalID: -4275177113884878138
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 32x32 Astronaut Player Alternative Color_22
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 224
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5cc7db451aa36e5e0800000000000000
+      internalID: -1880751329794753339
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 32x32 Astronaut Player Alternative Color_23
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 224
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8c37ce8ceb0f7ed40800000000000000
+      internalID: 5613720162746004424
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 32x32 Astronaut Player Alternative Color_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 192
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2b2b132e877b3b120800000000000000
+      internalID: 2428486353901695666
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 32x32 Astronaut Player Alternative Color_25
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 192
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 94a11217fd758a690800000000000000
+      internalID: -7590720554745652663
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 32x32 Astronaut Player Alternative Color_26
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 192
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 94c81baddbc1287e0800000000000000
+      internalID: -1764816502232347575
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 32x32 Astronaut Player Alternative Color_27
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 192
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b0ee379cf51cdd4c0800000000000000
+      internalID: -4261037055276749301
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 32x32 Astronaut Player Alternative Color_28
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 192
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bbf24484c7b40e510800000000000000
+      internalID: 1576342866740129723
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 32x32 Astronaut Player Alternative Color_29
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 192
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: efbf36f6dab0195e0800000000000000
+      internalID: -1904728327874937858
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 32x32 Astronaut Player Alternative Color_30
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 192
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f05a1c57e05e43c40800000000000000
+      internalID: 5491265695939405071
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 32x32 Astronaut Player Alternative Color_31
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 192
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: be1c43eaa43cd47c0800000000000000
+      internalID: -4085394561437482517
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 32x32 Astronaut Player Alternative Color_32
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 160
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aae2c2d2af08771c0800000000000000
+      internalID: -4505991090172842326
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 32x32 Astronaut Player Alternative Color_33
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 160
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6d4536eafff0fbbe0800000000000000
+      internalID: -1459430163427928874
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 32x32 Astronaut Player Alternative Color_34
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 160
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6b4091dc5d6cf1a60800000000000000
+      internalID: 7647049313869694134
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 32x32 Astronaut Player Alternative Color_35
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 160
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2130fd52f24ab6ee0800000000000000
+      internalID: -1266738347768872174
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 32x32 Astronaut Player Alternative Color_36
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 160
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 07d92c085737b6c20800000000000000
+      internalID: 3200778908685475184
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 32x32 Astronaut Player Alternative Color_37
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 160
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 66ce15a169250b390800000000000000
+      internalID: -7804647349592920986
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 32x32 Astronaut Player Alternative Color_38
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 160
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4d60d8ca75a1154a0800000000000000
+      internalID: -6606470214516406572
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 32x32 Astronaut Player Alternative Color_39
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 160
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 93cd7293a0f26ebd0800000000000000
+      internalID: -2601340013804790727
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: f83a9ef169f4b9241a983cc5497ae037
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":32.0,"y":32.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      32x32 Astronaut Player Alternative Color_0: -82266066673462977
+      32x32 Astronaut Player Alternative Color_1: -3825547833023702410
+      32x32 Astronaut Player Alternative Color_10: -2396150151673907085
+      32x32 Astronaut Player Alternative Color_11: -1755642837732611831
+      32x32 Astronaut Player Alternative Color_12: -1874885827140835788
+      32x32 Astronaut Player Alternative Color_13: 5023929012792358842
+      32x32 Astronaut Player Alternative Color_14: -5350372133038036130
+      32x32 Astronaut Player Alternative Color_15: -6843086547592141103
+      32x32 Astronaut Player Alternative Color_16: -5684693135434177993
+      32x32 Astronaut Player Alternative Color_17: 8123497906937018091
+      32x32 Astronaut Player Alternative Color_18: -7934365233683892222
+      32x32 Astronaut Player Alternative Color_19: 6718402770367053052
+      32x32 Astronaut Player Alternative Color_2: 2739708504867709325
+      32x32 Astronaut Player Alternative Color_20: -4883854378731904302
+      32x32 Astronaut Player Alternative Color_21: -4275177113884878138
+      32x32 Astronaut Player Alternative Color_22: -1880751329794753339
+      32x32 Astronaut Player Alternative Color_23: 5613720162746004424
+      32x32 Astronaut Player Alternative Color_24: 2428486353901695666
+      32x32 Astronaut Player Alternative Color_25: -7590720554745652663
+      32x32 Astronaut Player Alternative Color_26: -1764816502232347575
+      32x32 Astronaut Player Alternative Color_27: -4261037055276749301
+      32x32 Astronaut Player Alternative Color_28: 1576342866740129723
+      32x32 Astronaut Player Alternative Color_29: -1904728327874937858
+      32x32 Astronaut Player Alternative Color_3: 2984985011328875072
+      32x32 Astronaut Player Alternative Color_30: 5491265695939405071
+      32x32 Astronaut Player Alternative Color_31: -4085394561437482517
+      32x32 Astronaut Player Alternative Color_32: -4505991090172842326
+      32x32 Astronaut Player Alternative Color_33: -1459430163427928874
+      32x32 Astronaut Player Alternative Color_34: 7647049313869694134
+      32x32 Astronaut Player Alternative Color_35: -1266738347768872174
+      32x32 Astronaut Player Alternative Color_36: 3200778908685475184
+      32x32 Astronaut Player Alternative Color_37: -7804647349592920986
+      32x32 Astronaut Player Alternative Color_38: -6606470214516406572
+      32x32 Astronaut Player Alternative Color_39: -2601340013804790727
+      32x32 Astronaut Player Alternative Color_4: 4562479843860327311
+      32x32 Astronaut Player Alternative Color_5: 8907044454639878826
+      32x32 Astronaut Player Alternative Color_6: -904729625670844998
+      32x32 Astronaut Player Alternative Color_7: -5923675802102497902
+      32x32 Astronaut Player Alternative Color_8: -752038008333647453
+      32x32 Astronaut Player Alternative Color_9: 3147139145231829036
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -13,6 +13,5 @@ MonoBehaviour:
   m_Name: BossWave
   m_EditorClassIdentifier: Assembly-CSharp::WaveData
   enemies: []
-  spawnDelay: 0.5
+  spawnDelay: 3
   waveDelay: 3
-  cost: 0

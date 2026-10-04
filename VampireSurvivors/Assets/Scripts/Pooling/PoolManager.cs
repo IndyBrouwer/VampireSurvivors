@@ -57,7 +57,7 @@ public class PoolManager : MonoBehaviour
     }
 
     //For putting objects active
-    public GameObject DeQueuePoolObject(string id, Vector2 position)
+    public GameObject DeQueuePoolObject(string id)
     {
         //Check list for the id match
         if (!objectsDictionary.ContainsKey(id))
@@ -66,9 +66,6 @@ public class PoolManager : MonoBehaviour
         }
 
         GameObject poolObject = objectsDictionary[id].Dequeue();
-
-        //Set position
-        poolObject.transform.position = position;
 
         poolObject.SetActive(true);
 

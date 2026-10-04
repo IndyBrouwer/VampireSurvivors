@@ -63,7 +63,9 @@ public class NearestBehaviour : MonoBehaviour, IWeaponBehaviour
     private void CreateBullet(Vector2 targetPosition)
     {
         //Spawn bullet
-        GameObject newBullet = PoolManager.Instance.DeQueuePoolObject(weaponData.weaponID, transform.position);
+        GameObject newBullet = PoolManager.Instance.DeQueuePoolObject(weaponData.weaponID);
+        newBullet.transform.position = transform.position;
+        newBullet.transform.rotation = Quaternion.identity;
 
         //Initialize bullet (bullet prefab already has nearest script)
         newBullet.GetComponent<Nearest>().Initialize(weaponData, this);

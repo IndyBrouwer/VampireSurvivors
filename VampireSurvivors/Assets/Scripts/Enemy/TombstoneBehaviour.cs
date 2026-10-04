@@ -46,7 +46,7 @@ public class TombstoneBehaviour : MonoBehaviour, IEnemyBehaviour
         else if (rb.linearVelocity.x < 0)
         {
             //Look Left
-            spriteRenderer.flipY = true;
+            spriteRenderer.flipX = true;
         }
     }
 }

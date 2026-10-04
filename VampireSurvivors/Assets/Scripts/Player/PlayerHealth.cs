@@ -100,16 +100,16 @@ public class PlayerHealth : MonoBehaviour, IDamageable, IRegenerable
 
     public void Die()
     {
+        //Play death sound
+
         //Trigger death animation
         animator.SetTrigger("Die");
-
-        //Wait for player to lie flat?!
 
         //Shake screen effect
         screenShakeScript.CamShake(impulseSource);
 
         //Trigger game over screen (UI)
-        gameOverUIScript.ShowGameOverUI();
+        StartCoroutine(GameOverUIDelay());
     }
 
     private IEnumerator WaitDamageCooldown()
@@ -117,5 +117,13 @@ public class PlayerHealth : MonoBehaviour, IDamageable, IRegenerable
         yield return new WaitForSeconds(damageCooldown);
 
         canTakeDamage = true;
+    }
+
+    private IEnumerator GameOverUIDelay()
+    {
+        //For now just hardcoded time but could also do the length of death animation
+        yield return new WaitForSeconds(1.5f);
+
+        gameOverUIScript.ShowGameOverUI();
     }
 }

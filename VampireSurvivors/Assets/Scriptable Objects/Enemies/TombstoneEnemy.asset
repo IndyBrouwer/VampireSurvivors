@@ -14,13 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemyData
   enemyName: Tombstone Enemy
   enemyID: enemy_tombstone
-  prefab: {fileID: 0}
-  sprite: {fileID: 0}
+  prefab: {fileID: 8899271757664148746, guid: 435e9b89df0c2214a8f107886587bfcf, type: 3}
+  sprite: {fileID: -855298285791758126, guid: d3082a3432133214b950feaf2f150ebc, type: 3}
   health: 500
-  speed: 1
+  speed: 0.75
   damage: 10
-  attackCooldown: 0
-  dropRate: 0
-  possibleDrops: []
-  xpAmount: 1
+  attackCooldown: 0.5
+  dropRate: 0.75
+  possibleDrops:
+  - {fileID: 11400000, guid: 9b937da0d70b613498538fa7390802e2, type: 2}
+  xpAmount: 5
   goldAmount: 0
