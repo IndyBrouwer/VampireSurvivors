@@ -32,6 +32,15 @@ public class Enemy : MonoBehaviour, IDamageable, IDroppable, ILevelable
         SetupEnemy();
     }
 
+    private void OnEnable()
+    {
+        //Reset sprite color when needed
+        if (spriteRenderer.color == Color.red)
+        {
+            spriteRenderer.color = Color.white;
+        }
+    }
+
     public void InitializeEnemy(Transform playerPosition, KillCounter script)
     {
         if (TryGetComponent<IEnemyBehaviour>(out enemyBehaviour))

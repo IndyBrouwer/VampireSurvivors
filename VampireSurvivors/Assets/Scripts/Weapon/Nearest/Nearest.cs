@@ -38,10 +38,6 @@ public class Nearest : MonoBehaviour
         {
             Attack();
         }
-        else
-        {
-            Debug.LogWarning("IDamageable component not found on " + gameObject.name);
-        }
     }
 
     //Deal damage to hit IDamageable if not player

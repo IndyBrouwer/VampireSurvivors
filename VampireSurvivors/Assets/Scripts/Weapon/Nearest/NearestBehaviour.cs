@@ -1,4 +1,3 @@
-using TMPro;
 using UnityEngine;
 
 public class NearestBehaviour : MonoBehaviour, IWeaponBehaviour
@@ -9,9 +8,6 @@ public class NearestBehaviour : MonoBehaviour, IWeaponBehaviour
     [SerializeField] private float maxRadius = 10f;
     private GameObject closestTarget;
     private float closestDistance;
-
-    [Header("Game Objects")]
-    [SerializeField] private GameObject bulletPrefab;
 
     [Header("Scritps")]
     private Weapon weaponScript;
