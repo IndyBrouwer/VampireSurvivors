@@ -107,38 +107,69 @@ public class Enemy : MonoBehaviour, IDamageable, IDroppable, ILevelable
 
     public void Drop()
     {
-        //Decide if enemy will drop an item or not
-        //if (Random.value <= enemyData.dropRate)
-        //{
-        //    foreach (DropData drop in enemyData.possibleDrops)
-        //    {
-        //        if (DropType.XP == drop.dropType)
-        //        {
-        //            dropPairs.Add(drop, enemyData.xpAmount);
-        //        }
-        //        else if (DropType.Gold == drop.dropType)
-        //        {
-        //            dropPairs.Add(drop, enemyData.goldAmount);
-        //        }
-        //    }
+        //Check if the enemy should drop an item based on its drop rate
+        if (Random.value > enemyData.dropRate)
+        {
+            return;
+        }
 
-        //    //Decide if it will be xp or gold
+        //Calculate the total drop rate of all possible drops
+        float totalDropRate = 0f;
 
-        //    //Drop decided item with their amount
+        foreach (DropData drop in enemyData.possibleDrops)
+        {
+            totalDropRate += drop.dropRate;
+        }
 
-        //    //Instantiate the item prefab at the enemy's position
-        //    //Instantiate(drop.prefab, transform.position, Quaternion.identity);
-        //}
+        //Pick a drop based on the drop rates of each possible drop
+        float randomValue = Random.value * totalDropRate;
 
-        //Temp; just drop the first drop
-        //GameObject droppedItem = Instantiate(enemyData.possibleDrops[0].prefab, transform.position, Quaternion.identity);
-        GameObject droppedItem = PoolManager.Instance.DeQueuePoolObject(enemyData.possibleDrops[0].dropID);
+        foreach (DropData drop in enemyData.possibleDrops)
+        {
+            randomValue -= drop.dropRate;
+
+            if (randomValue <= 0f)
+            {
+                DropItem(drop);
+                return;
+            }
+        }
+    }
+
+    private void DropItem(DropData drop)
+    {
+        float amount = 0;
+
+        switch (drop.dropType)
+        {
+            case DropType.XP:
+                amount = enemyData.xpAmount;
+                break;
+
+            case DropType.Gold:
+                amount = enemyData.goldAmount;
+                break;
+
+            case DropType.Health:
+                amount = enemyData.healthAmount;
+                break;
+        }
+
+        //Round amount to nearest whole number if not 0, so it can be an int, (especially important for gold).
+        int intAmount = Mathf.RoundToInt(amount);
+        if (intAmount <= 0)
+        {
+            //Set to 1 if the rounded amount is less than or equal to 0
+            intAmount = 1; 
+        }
+
+        GameObject droppedItem = PoolManager.Instance.DeQueuePoolObject(drop.dropID);
         droppedItem.transform.position = this.transform.position;
 
-        //Initialize dropped item
+        //Set amount of drop
         if (droppedItem.TryGetComponent<ICollectable>(out collectable))
         {
-            collectable.Initialize(enemyData.xpAmount);
+            collectable.Initialize(amount);
         }
     }
 

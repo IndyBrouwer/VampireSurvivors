@@ -4,11 +4,13 @@ using UnityEngine;
 public class PlayerWallet : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI coinText;
-    private int coinCount;
+    private int runGoldAmount;
+    private int totalGoldAmount;
 
     private void Start()
     {
-        coinCount = PlayerPrefs.GetInt("CoinCount", 0);
+        runGoldAmount = 0;
+        totalGoldAmount = PlayerPrefs.GetInt("CoinCount", 0);
 
         UpdateUI();
     }
@@ -19,25 +21,19 @@ public class PlayerWallet : MonoBehaviour
         int intAmount = Mathf.CeilToInt(amount);
 
         //Add the amount to the coin count
-        coinCount += intAmount;
+        runGoldAmount += intAmount;
 
-        PlayerPrefs.SetInt("CoinCount", coinCount);
+        int newTotal = totalGoldAmount + runGoldAmount;
 
-        UpdateUI();
-    }
+        PlayerPrefs.SetInt("CoinCount", newTotal);
 
-    public void TakeCoins(int amount)
-    {
-        //Subtract the amount from the coin count
-        coinCount -= amount;
-
-        PlayerPrefs.SetInt("CoinCount", coinCount);
+        Debug.Log(newTotal);
 
         UpdateUI();
     }
 
     private void UpdateUI()
     {
-        coinText.text = coinCount.ToString();
+        coinText.text = runGoldAmount.ToString();
     }
 }

@@ -18,4 +18,4 @@ MonoBehaviour:
   description: Player can collect to regen their health.
   sprite: {fileID: 7406214417141339960, guid: cf01bdea0292f5c4b90a762d0e87c906, type: 3}
   prefab: {fileID: 5724273640306514956, guid: 5596d41e2e9677c48852d4061682ea72, type: 3}
-  dropRate: 0.5
+  dropRate: 0.05

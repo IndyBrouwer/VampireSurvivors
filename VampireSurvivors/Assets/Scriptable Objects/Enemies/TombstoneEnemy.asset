@@ -23,5 +23,8 @@ MonoBehaviour:
   dropRate: 0.75
   possibleDrops:
   - {fileID: 11400000, guid: 9b937da0d70b613498538fa7390802e2, type: 2}
+  - {fileID: 11400000, guid: 8af723d16af4e4a41bd677465e7e8949, type: 2}
+  - {fileID: 11400000, guid: c776bfd0334fa064d830762670567e61, type: 2}
   xpAmount: 5
-  goldAmount: 0
+  goldAmount: 1
+  healthAmount: 25

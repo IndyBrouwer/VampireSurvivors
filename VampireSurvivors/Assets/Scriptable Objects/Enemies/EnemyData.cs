@@ -20,4 +20,5 @@ public class EnemyData : ScriptableObject
     public DropData[] possibleDrops;
     public float xpAmount;
     public float goldAmount;
+    public float healthAmount;
 }

@@ -6059,13 +6059,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 442287037}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1272530813}
-  m_Father: {fileID: 1794624321}
+  m_Father: {fileID: 847665918}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &442287039
 MonoBehaviour:
@@ -13280,6 +13280,58 @@ MonoBehaviour:
   m_InstancedGameObject: {fileID: 0}
   m_Flags: 3
   m_ColliderType: 1
+--- !u!1 &847665917
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 847665918}
+  - component: {fileID: 847665919}
+  m_Layer: 6
+  m_Name: Weapon Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &847665918
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 847665917}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1542013566}
+  - {fileID: 2023376748}
+  - {fileID: 442287038}
+  - {fileID: 1126221191}
+  m_Father: {fileID: 1794624321}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &847665919
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 847665917}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3fc96c4e7e5bd10468ae019f59c1a8bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::WeaponManager
+  nearestWeapon: {fileID: 1542013565}
+  throwableWeapon: {fileID: 2023376747}
+  shockwaveWeapon: {fileID: 442287037}
+  orbWeapon: {fileID: 1126221190}
 --- !u!213 &853751308
 Sprite:
   m_ObjectHideFlags: 0
@@ -17621,13 +17673,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1126221190}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 444657675}
-  m_Father: {fileID: 1794624321}
+  m_Father: {fileID: 847665918}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1126221192
 MonoBehaviour:
@@ -25578,12 +25630,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1542013565}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1794624321}
+  m_Father: {fileID: 847665918}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1542013567
 MonoBehaviour:
@@ -29806,6 +29858,7 @@ GameObject:
   - component: {fileID: 1794624326}
   - component: {fileID: 1794624330}
   - component: {fileID: 1794624332}
+  - component: {fileID: 1794624333}
   - component: {fileID: 1794624331}
   m_Layer: 6
   m_Name: Player
@@ -29887,10 +29940,7 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1464239611}
-  - {fileID: 1126221191}
-  - {fileID: 442287038}
-  - {fileID: 1542013566}
-  - {fileID: 2023376748}
+  - {fileID: 847665918}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &1794624322
@@ -30180,6 +30230,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerLeveling
   experienceSlider: {fileID: 482344963}
   levelText: {fileID: 750458297}
+--- !u!114 &1794624333
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1794624319}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9db3da1077471444fa88f8e90ce6af50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerWallet
+  coinText: {fileID: 435505968}
 --- !u!114 &1843054688
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33200,12 +33263,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2023376747}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1794624321}
+  m_Father: {fileID: 847665918}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2023376749
 MonoBehaviour:
@@ -35089,7 +35152,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WaveManager
   waves:
-  - {fileID: 11400000, guid: ef53aa74e6584f6488b3770d6ecc9f55, type: 2}
+  - {fileID: 11400000, guid: 813ad283d0778684099b34e7b4e6dd9b, type: 2}
   - {fileID: 11400000, guid: 3c35ba7993eaba848a426d10bde9b36e, type: 2}
   - {fileID: 11400000, guid: 3c35ba7993eaba848a426d10bde9b36e, type: 2}
   - {fileID: 11400000, guid: 3c35ba7993eaba848a426d10bde9b36e, type: 2}

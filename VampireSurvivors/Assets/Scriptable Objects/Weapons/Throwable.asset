@@ -17,5 +17,5 @@ MonoBehaviour:
   sprite: {fileID: 21300000, guid: e00912ddd2420724c94ab29ac641fd66, type: 3}
   damage: 100
   interval: 2
-  moveSpeed: 60
+  moveSpeed: 2
   projectile: {fileID: 6397008744229194444, guid: 3015a554131446a47933cb00ae51edf3, type: 3}

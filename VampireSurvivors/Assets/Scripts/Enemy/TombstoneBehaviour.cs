@@ -12,6 +12,9 @@ public class TombstoneBehaviour : MonoBehaviour, IEnemyBehaviour
     [Header("Enemy Stats")]
     private float speed;
 
+    private float lifeSpan = 20f; //The lifespan of the tombstone enemy in seconds
+    private float timeAlive;
+
     [Header("Required Components")]
     private Rigidbody2D rb;
 
@@ -23,6 +26,16 @@ public class TombstoneBehaviour : MonoBehaviour, IEnemyBehaviour
         speed = enemyData.speed;
 
         rb = GetComponent<Rigidbody2D>();
+    }
+
+    private void Update()
+    {
+        timeAlive += Time.deltaTime;
+
+        if (timeAlive >= lifeSpan)
+        {
+            Despawn();
+        }
     }
 
     //Move is already being called by enemy script
@@ -48,5 +61,12 @@ public class TombstoneBehaviour : MonoBehaviour, IEnemyBehaviour
             //Look Left
             spriteRenderer.flipX = true;
         }
+    }
+
+    private void Despawn()
+    {
+        //Despawn enemy instead of it dying, so it doesnt count as kill and wont drop an item.
+
+        PoolManager.Instance.EnQueuePoolObject(gameObject);
     }
 }
