@@ -17,7 +17,7 @@ MonoBehaviour:
   prefab: {fileID: 8899271757664148746, guid: 435e9b89df0c2214a8f107886587bfcf, type: 3}
   sprite: {fileID: -855298285791758126, guid: d3082a3432133214b950feaf2f150ebc, type: 3}
   health: 500
-  speed: 0.75
+  speed: 0.5
   damage: 10
   attackCooldown: 0.5
   dropRate: 0.75

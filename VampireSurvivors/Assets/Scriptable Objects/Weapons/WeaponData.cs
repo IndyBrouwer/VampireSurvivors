@@ -14,4 +14,9 @@ public class WeaponData : ScriptableObject
     public float interval;
     public float moveSpeed;
     public GameObject projectile;
+
+    [Header("Upgrade Settings")]
+    [Range(0, 5)]
+    public int maxUprades;
+    public WeaponUpgradeData[] upgrades;
 }

@@ -12,6 +12,10 @@ public class PlayerLeveling : MonoBehaviour
     private float currentExperience = 0;
     private int currentLevel = 0;
 
+    [Header("Scripts")]
+    [SerializeField] private LevelupController selectorControllerScript;
+    [SerializeField] private PauseGame pauseGameScript;
+
     private void Start()
     {
         UpdateLevelUI(false);
@@ -68,10 +72,16 @@ public class PlayerLeveling : MonoBehaviour
         
         UpdateExperienceUI();
 
+        //If player actually leveled up
         if (increaseMax)
         {
+            //Pause game
+            pauseGameScript.Pause();
+
             //Set the new max value of the experience slider
             experienceSlider.maxValue = GetExperienceForCurrentLevel() * 1.5f;
+
+            selectorControllerScript.EnableSelector();
         }
     }
 }

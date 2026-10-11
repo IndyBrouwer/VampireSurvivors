@@ -19,3 +19,5 @@ MonoBehaviour:
   interval: 5
   moveSpeed: 150
   projectile: {fileID: 0}
+  maxUprades: 2
+  upgrades: []

@@ -12,14 +12,14 @@ EditorBuildSettings:
     path: Assets/Scenes/Settings.unity
     guid: 27cf5783b153b004fa91c9a81294a689
   - enabled: 1
-    path: Assets/Scenes/Shop.unity
-    guid: 4efd1a17ac020054bad2a4badd66fdf5
-  - enabled: 1
     path: Assets/Scenes/Selector.unity
     guid: 36a2d074d34626d4d8c3eabdcd6fee6f
   - enabled: 1
     path: Assets/Scenes/Game.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
+  - enabled: 1
+    path: Assets/Scenes/Shop.unity
+    guid: 4efd1a17ac020054bad2a4badd66fdf5
   - enabled: 1
     path: Assets/Scenes/Credits.unity
     guid: c078ad4a7a37aee49a402a6c6088db54

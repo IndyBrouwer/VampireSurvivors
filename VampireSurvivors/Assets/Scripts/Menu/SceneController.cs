@@ -8,6 +8,11 @@ public class SceneController : MonoBehaviour
         SceneManager.LoadScene("Start");
     }
 
+    public void WeaponSelector()
+    {
+        SceneManager.LoadScene("Selector");
+    }
+
     public void Shop()
     {
         SceneManager.LoadScene("Shop");
