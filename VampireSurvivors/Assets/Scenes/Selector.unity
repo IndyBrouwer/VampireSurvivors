@@ -905,7 +905,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 225}
-  m_SizeDelta: {x: 1000, y: 100}
+  m_SizeDelta: {x: 1200, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1068624148
 MonoBehaviour:
@@ -929,8 +929,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Pick your starting weapon!
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: cbd066acd7b8c214d8828417cfd40e2b, type: 2}
-  m_sharedMaterial: {fileID: 147590941889684864, guid: cbd066acd7b8c214d8828417cfd40e2b, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 36430ea1e53f8a4429b2e961eae10f9a, type: 2}
+  m_sharedMaterial: {fileID: -9030649951678090138, guid: 36430ea1e53f8a4429b2e961eae10f9a, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []

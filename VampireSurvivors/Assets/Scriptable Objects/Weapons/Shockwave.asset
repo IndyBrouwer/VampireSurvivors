@@ -20,4 +20,6 @@ MonoBehaviour:
   moveSpeed: 0
   projectile: {fileID: 0}
   maxUprades: 2
-  upgrades: []
+  upgrades:
+  - {fileID: 11400000, guid: 50295927000dc454ab395f616cc88472, type: 2}
+  - {fileID: 11400000, guid: b78b7f801cfb2ad43834be367a26c28b, type: 2}

@@ -14714,6 +14714,7 @@ GameObject:
   m_Component:
   - component: {fileID: 825207221}
   - component: {fileID: 825207222}
+  - component: {fileID: 825207223}
   m_Layer: 5
   m_Name: Upgrade 2
   m_TagString: Untagged
@@ -14785,7 +14786,33 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 0}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 825207223}
+        m_TargetAssemblyTypeName: LevelupSlot, Assembly-CSharp
+        m_MethodName: OnButtonClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &825207223
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 825207220}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 919468bec61027442bf60597327337b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LevelupSlot
+  levelupControllerScript: {fileID: 1704424520}
+  pauseGameScript: {fileID: 866166960}
 --- !u!1 &825941271
 GameObject:
   m_ObjectHideFlags: 0
@@ -30850,6 +30877,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameOverUI
   sceneControllerScript: {fileID: 1517297708}
+  pauseGameScript: {fileID: 866166960}
 --- !u!114 &1593937934
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -40726,6 +40754,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2103743563}
   - component: {fileID: 2103743564}
+  - component: {fileID: 2103743565}
   m_Layer: 5
   m_Name: Upgrade 3
   m_TagString: Untagged
@@ -40797,7 +40826,33 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 0}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2103743565}
+        m_TargetAssemblyTypeName: LevelupSlot, Assembly-CSharp
+        m_MethodName: OnButtonClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &2103743565
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2103743562}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 919468bec61027442bf60597327337b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LevelupSlot
+  levelupControllerScript: {fileID: 1704424520}
+  pauseGameScript: {fileID: 866166960}
 --- !u!1 &2119143815
 GameObject:
   m_ObjectHideFlags: 0
@@ -41363,6 +41418,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6234189047832187288}
   - component: {fileID: 6234189047832187289}
+  - component: {fileID: 6234189047832187290}
   m_Layer: 5
   m_Name: Upgrade 1
   m_TagString: Untagged
@@ -42584,7 +42640,33 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 0}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6234189047832187290}
+        m_TargetAssemblyTypeName: LevelupSlot, Assembly-CSharp
+        m_MethodName: OnButtonClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &6234189047832187290
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3797319620201376860}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 919468bec61027442bf60597327337b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LevelupSlot
+  levelupControllerScript: {fileID: 1704424520}
+  pauseGameScript: {fileID: 866166960}
 --- !u!224 &6896237443276075882
 RectTransform:
   m_ObjectHideFlags: 0

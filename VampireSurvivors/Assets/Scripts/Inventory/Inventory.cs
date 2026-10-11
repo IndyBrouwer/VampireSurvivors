@@ -69,7 +69,7 @@ public class Inventory : MonoBehaviour
 
     public void AddWeapon(WeaponData weapon)
     {
-        //Add weapon to ownedWeapons dictionary
+        //Edit weapons value instead of trying to add it again as it already exists
         ownedWeapons[weapon] = true;
 
         //Add weapon icon to UI
@@ -81,7 +81,7 @@ public class Inventory : MonoBehaviour
 
     public void AddWeaponUpgrade(WeaponUpgradeData upgrade)
     {
-        //Add weapon upgrade to ownedWeaponsUpgrades dictionary
+        //Edit weaponupgrades value instead of trying to add it again as it already exists
         ownedWeaponUpgrades[upgrade] = true;
 
         //Apply upgrade to weapon
@@ -89,7 +89,7 @@ public class Inventory : MonoBehaviour
 
     public void AddItem(ItemData item)
     {
-        //Add item to ownedItems dictionary
+        //Edit items value instead of trying to add it again as it already exists
         ownedItems[item] = true;
 
         //Add item icon to UI
@@ -100,7 +100,7 @@ public class Inventory : MonoBehaviour
 
     public void AddItemUpgrade(ItemUpgradeData upgrade)
     {
-        //Add item upgrade to ownedItemUpgrades dictionary
+        //Edit itemUpgrades value instead of trying to add it again as it already exists
         ownedItemUpgrades[upgrade] = true;
 
         //Apply upgrade to item

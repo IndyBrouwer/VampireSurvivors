@@ -8,42 +8,34 @@ public class InventoryUI : MonoBehaviour
 
     public void AddWeapon(WeaponData weapon)
     {
-        foreach (GameObject slot in weaponSlots)
-        {
-            Image slotImage = slot.GetComponentInChildren<Image>();
-
-            //If a slot with no image is found, place newly aquired weapon there
-            if (slotImage.sprite == null)
-            {
-                //Set slot sprite to weapon sprite
-                slotImage.sprite = weapon.sprite;
-
-                //Get color component so we can adjust alpha
-                Color slotColor = slotImage.GetComponent<Color>();
-
-                //Set alpha of sprite to 1
-                slotColor.a = 1;
-            }
-        }
+        SetImage(weaponSlots, weapon.sprite);
     }
 
     public void AddItem(ItemData item)
     {
-        foreach (GameObject slot in itemSlots)
+        SetImage(itemSlots, item.sprite);
+    }
+
+    public void SetImage(GameObject[] list, Sprite sprite)
+    {
+        foreach (GameObject slot in weaponSlots)
         {
-            Image slotImage = slot.GetComponentInChildren<Image>();
-
-            //If a slot with no image is found, place newly aquired weapon there
-            if (slotImage.sprite == null)
+            foreach (Image slotImage in slot.GetComponentsInChildren<Image>())
             {
-                //Set slot sprite to item sprite
-                slotImage.sprite = item.sprite;
+                //If a slot with no image is found, place newly aquired weapon there
+                if (slotImage.sprite == null)
+                {
+                    //Set slot sprite to weapon sprite
+                    slotImage.sprite = sprite;
 
-                //Get color component so we can adjust alpha
-                Color slotColor = slotImage.GetComponent<Color>();
+                    //Adjust alpha so image will be visible
+                    Color slotColor = slotImage.color;
+                    slotColor.a = 1f;
+                    slotImage.color = slotColor;
 
-                //Set alpha of sprite to 1
-                slotColor.a = 1;
+                    //Return instead of break so it exits all loops, (exits setimage completely)
+                    return;
+                }
             }
         }
     }
