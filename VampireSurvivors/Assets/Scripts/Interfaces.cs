@@ -51,3 +51,8 @@ public interface IWeaponBehaviour
 
     public void Fire();
 }
+
+public interface IClickable
+{
+    public void OnButtonClick();
+}

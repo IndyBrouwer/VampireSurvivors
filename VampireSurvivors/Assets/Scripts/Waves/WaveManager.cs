@@ -10,6 +10,7 @@ public class WaveManager : MonoBehaviour
 
     private int currentWaveIndex = 0;
     private bool isSpawning = false;
+    private bool systemActive = true;
 
     [Header("Scripts")]
     private EnemySpawnPosition spawnPositionScript;
@@ -22,7 +23,7 @@ public class WaveManager : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (isSpawning == false)
+        if (isSpawning == false && systemActive)
         {
             StartCoroutine(WaveController());
         }
@@ -85,5 +86,10 @@ public class WaveManager : MonoBehaviour
 
         //Wait for wave spawning delay before starting the next wave
         yield return new WaitForSeconds(wave.waveDelay);
+    }
+
+    public void SetSystemActive(bool keepSystemActive)
+    {
+        systemActive = keepSystemActive;
     }
 }

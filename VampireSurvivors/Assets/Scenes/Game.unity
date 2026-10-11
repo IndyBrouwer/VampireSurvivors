@@ -30877,7 +30877,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameOverUI
   sceneControllerScript: {fileID: 1517297708}
-  pauseGameScript: {fileID: 866166960}
 --- !u!114 &1593937934
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35073,8 +35072,10 @@ MonoBehaviour:
   maxHealth: 100
   damageCooldown: 0.2
   healthSlider: {fileID: 1997047897}
+  collector: {fileID: 1464239610}
   gameOverUIScript: {fileID: 1587482807}
   screenShakeScript: {fileID: 519420034}
+  waveManagerScript: {fileID: 2140798294}
 --- !u!50 &1794624327
 Rigidbody2D:
   serializedVersion: 5

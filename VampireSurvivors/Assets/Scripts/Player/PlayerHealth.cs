@@ -20,14 +20,18 @@ public class PlayerHealth : MonoBehaviour, IDamageable, IRegenerable
     [Header("Required Components")]
     private Animator animator;
     private CinemachineImpulseSource impulseSource;
+    [SerializeField] private GameObject collector;
 
     [Header("Required Scripts")]
     [SerializeField] private GameOverUI gameOverUIScript;
     [SerializeField] private ScreenShake screenShakeScript;
+    [SerializeField] private WaveManager waveManagerScript;
+    private WeaponManager weaponManagerScript;
     private DamageEffect damageEffectScript;
 
     private void Start()
     {
+        weaponManagerScript = GetComponentInChildren<WeaponManager>();
         animator = GetComponent<Animator>();
         damageEffectScript = GetComponent<DamageEffect>();
         impulseSource = GetComponent<CinemachineImpulseSource>();
@@ -104,6 +108,15 @@ public class PlayerHealth : MonoBehaviour, IDamageable, IRegenerable
 
         //Trigger death animation
         animator.SetTrigger("Die");
+
+        //Disable weapons
+        weaponManagerScript.DisableWeapons();
+
+        //Disable collector on death
+        collector.SetActive(false);
+
+        //Stop wave progression
+        waveManagerScript.SetSystemActive(false);
 
         //Shake screen effect
         screenShakeScript.CamShake(impulseSource);

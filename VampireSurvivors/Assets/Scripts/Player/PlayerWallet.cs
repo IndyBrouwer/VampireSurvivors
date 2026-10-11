@@ -27,8 +27,6 @@ public class PlayerWallet : MonoBehaviour
 
         PlayerPrefs.SetInt("CoinCount", newTotal);
 
-        Debug.Log(newTotal);
-
         UpdateUI();
     }
 

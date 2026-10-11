@@ -37,4 +37,12 @@ public class WeaponManager : MonoBehaviour
     {
         weaponController.SetActive(true);
     }
+
+    public void DisableWeapons()
+    {
+        foreach (GameObject controller in allControllers)
+        {
+            controller.SetActive(false);
+        }
+    }
 }
