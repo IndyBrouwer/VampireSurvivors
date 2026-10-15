@@ -23,6 +23,6 @@ public class HealthCollectable : MonoBehaviour, ICollectable
         //Add health to player
         collector.GetComponentInParent<PlayerHealth>().Heal(healAmount);
 
-        Destroy(gameObject);
+        PoolManager.Instance.EnQueuePoolObject(gameObject);
     }
 }

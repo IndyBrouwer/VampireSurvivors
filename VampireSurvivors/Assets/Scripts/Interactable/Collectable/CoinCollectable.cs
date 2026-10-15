@@ -23,6 +23,6 @@ public class CoinCollectable : MonoBehaviour, ICollectable
         //Add amount of coins to player wallet
         collector.GetComponentInParent<PlayerWallet>().AddCoins(heldAmount);
 
-        Destroy(gameObject);
+        PoolManager.Instance.EnQueuePoolObject(gameObject);
     }
 }
