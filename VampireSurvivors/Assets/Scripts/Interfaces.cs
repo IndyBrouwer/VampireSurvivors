@@ -13,9 +13,9 @@ public interface IRegenerable
 
 public interface IEnemyBehaviour
 {
-    public void Initialize(EnemyData enemyData, Transform playerPos);
+    public void Initialize(EnemyData enemyData, Transform playerPos, Animator animator);
     public void Move();
-    public void UpdateAnimation(SpriteRenderer spriteRenderer);
+    public void UpdateAnimation();
 }
 
 public interface IDroppable
@@ -50,9 +50,18 @@ public interface IWeaponBehaviour
     public void Initialize(WeaponData scriptableObject, Weapon weaponBrainScript);
 
     public void Fire();
+
+    public void SetValues(float damageMultiplyer, float sizeMultiplyer, float speedMultiplyer, int projectileIncrease, int increaseHits);
 }
 
 public interface IClickable
 {
     public void OnButtonClick();
+}
+
+public interface IUpgradable
+{
+    public bool CanUpgrade();
+    public int GetCurrentLevel();
+    public void Upgrade();
 }

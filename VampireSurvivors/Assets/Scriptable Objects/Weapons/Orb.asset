@@ -15,11 +15,15 @@ MonoBehaviour:
   weaponName: Void Orb
   weaponID: weapon_orb
   sprite: {fileID: 7495905855217554638, guid: 5135541e47cedc04ca84585624b527ce, type: 3}
+  description: Orbiting weapon that damages enemies that it touches.
   damage: 50
   interval: 5
+  radius:
+  - 2
   moveSpeed: 150
   projectile: {fileID: 0}
   maxUprades: 2
   upgrades:
   - {fileID: 11400000, guid: 5fc01a3149b9f254e830ccc2a7be8ef0, type: 2}
   - {fileID: 11400000, guid: bb7ab9d359ce8bd4d9e1c3598b53361c, type: 2}
+  - {fileID: 11400000, guid: a8ec49eea054c6a4eac85a31e1797a1b, type: 2}

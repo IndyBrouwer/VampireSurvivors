@@ -5,13 +5,13 @@ public class Inventory : MonoBehaviour
 {
     //Dictionary for each category with a bool to keep track of if the player has that item
     [Header("Dictionaries")]
-    private Dictionary<WeaponData, bool> ownedWeapons = new Dictionary<WeaponData, bool>();
-    private Dictionary<WeaponUpgradeData, bool> ownedWeaponUpgrades = new Dictionary<WeaponUpgradeData, bool>();
-    private Dictionary<ItemData, bool> ownedItems = new Dictionary<ItemData, bool>();
-    private Dictionary<ItemUpgradeData, bool> ownedItemUpgrades = new Dictionary<ItemUpgradeData, bool>();
+    private Dictionary<Weapon, bool> weaponStatuses = new Dictionary<Weapon, bool>();
+    private Dictionary<WeaponUpgradeData, bool> weaponUpgradeStatuses = new Dictionary<WeaponUpgradeData, bool>();
+    private Dictionary<ItemData, bool> itemStatuses = new Dictionary<ItemData, bool>();
+    private Dictionary<ItemUpgradeData, bool> itemUpgradeStatuses = new Dictionary<ItemUpgradeData, bool>();
 
     [Header("Weapon Lists")]
-    [SerializeField] private WeaponData[] allWeapons;
+    [SerializeField] private Weapon[] allWeapons;
     [SerializeField] private WeaponUpgradeData[] allWeaponUpgrades;
 
     [Header("Item Lists")]
@@ -37,7 +37,7 @@ public class Inventory : MonoBehaviour
         //Search for startingweaponid in allweapon dictionary
         for (int index = 0; index < allWeapons.Length; index++)
         {
-            if (startingWeaponID == allWeapons[index].weaponID)
+            if (startingWeaponID == allWeapons[index].GetWeaponData().weaponID)
             {
                 AddWeapon(allWeapons[index]);
             }
@@ -46,34 +46,34 @@ public class Inventory : MonoBehaviour
 
     private void SetupDictionaries()
     {
-        foreach (WeaponData weapon in allWeapons)
+        foreach (Weapon weapon in allWeapons)
         {
-            ownedWeapons.Add(weapon, false);
+            weaponStatuses.Add(weapon, false);
         }
 
         foreach (WeaponUpgradeData weaponUpgrade in allWeaponUpgrades)
         {
-            ownedWeaponUpgrades.Add(weaponUpgrade, false);
+            weaponUpgradeStatuses.Add(weaponUpgrade, false);
         }
         
         foreach (ItemData item in allItems)
         {
-            ownedItems.Add(item, false);
+            itemStatuses.Add(item, false);
         }
 
         foreach (ItemUpgradeData itemUpgrade in allItemUpgrades)
         {
-            ownedItemUpgrades.Add(itemUpgrade, false);
+            itemUpgradeStatuses.Add(itemUpgrade, false);
         }
     }
 
-    public void AddWeapon(WeaponData weapon)
+    public void AddWeapon(Weapon weapon)
     {
         //Edit weapons value instead of trying to add it again as it already exists
-        ownedWeapons[weapon] = true;
+        weaponStatuses[weapon] = true;
 
         //Add weapon icon to UI
-        inventoryUIScript.AddWeapon(weapon);
+        inventoryUIScript.AddWeapon(weapon.GetWeaponData());
 
         //Enable newly added weapon
         weaponManager.SearchPair(weapon);
@@ -82,7 +82,7 @@ public class Inventory : MonoBehaviour
     public void AddWeaponUpgrade(WeaponUpgradeData upgrade)
     {
         //Edit weaponupgrades value instead of trying to add it again as it already exists
-        ownedWeaponUpgrades[upgrade] = true;
+        weaponUpgradeStatuses[upgrade] = true;
 
         //Apply upgrade to weapon
     }
@@ -90,7 +90,7 @@ public class Inventory : MonoBehaviour
     public void AddItem(ItemData item)
     {
         //Edit items value instead of trying to add it again as it already exists
-        ownedItems[item] = true;
+        itemStatuses[item] = true;
 
         //Add item icon to UI
         inventoryUIScript.AddItem(item);
@@ -101,8 +101,13 @@ public class Inventory : MonoBehaviour
     public void AddItemUpgrade(ItemUpgradeData upgrade)
     {
         //Edit itemUpgrades value instead of trying to add it again as it already exists
-        ownedItemUpgrades[upgrade] = true;
+        itemUpgradeStatuses[upgrade] = true;
 
         //Apply upgrade to item
+    }
+
+    public Dictionary<Weapon, bool> GetWeaponDictionary()
+    {
+        return weaponStatuses;
     }
 }

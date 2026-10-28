@@ -3,12 +3,12 @@ using UnityEngine;
 
 public class WeaponManager : MonoBehaviour
 {
-    [Header("List of weapon controllers and weapon data")]
+    [Header("List of all weapon controllers")]
     [SerializeField] private GameObject[] allControllers;
     
-    private Dictionary<WeaponData, GameObject> weaponPairs = new Dictionary<WeaponData, GameObject>();
+    private Dictionary<Weapon, GameObject> weaponPairs = new Dictionary<Weapon, GameObject>();
 
-    public void SetupDictionary(WeaponData[] allWeapons)
+    public void SetupDictionary(Weapon[] allWeapons)
     {
         for (int index = 0; index < allWeapons.Length; index++)
         {
@@ -18,7 +18,7 @@ public class WeaponManager : MonoBehaviour
         }
     }
 
-    public void SearchPair(WeaponData weapon)
+    public void SearchPair(Weapon weapon)
     {
         //Search dictionary for gameobject match of weapondata
         foreach (var pair in weaponPairs)

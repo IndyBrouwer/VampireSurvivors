@@ -5,9 +5,12 @@ public class Shockwave : MonoBehaviour
     private WeaponData weaponData;
 
     [Header("Ring Radius")]
-    [SerializeField] private float smallestRadius;
-    [SerializeField] private float middleRadius;
-    [SerializeField] private float biggestRadius;
+    private float smallestRadius;
+    private float middleRadius;
+    private float biggestRadius;
+
+    [Header("Upgradable stats")]
+    private float damage;
 
     [Header("Interfaces")]
     private IDamageable damageableObject;
@@ -19,6 +22,17 @@ public class Shockwave : MonoBehaviour
         //Setup vars
         weaponData = scriptableObject;
         shockwaveBehaviourScript = script;
+    }
+
+    public void SetValues(float power, float radiusSmall, float radiusMiddle, float radiusBig)
+    {
+        //Set damage
+        damage = power;
+
+        //Set size
+        smallestRadius = radiusSmall;
+        middleRadius = radiusMiddle;
+        biggestRadius = radiusBig;
     }
 
     private void FixedUpdate()
@@ -43,12 +57,12 @@ public class Shockwave : MonoBehaviour
 
             float distance = Vector3.Distance(transform.position, hit.transform.position);
 
-            float damage = GetDamageForDistance(distance);
-            Debug.Log("Enemy will receive: " + damage + " damage from shockwave.");
+            float dmg = GetDamageForDistance(distance);
+            Debug.Log("Enemy will receive: " + dmg + " damage from shockwave.");
 
-            if (damage > 0)
+            if (dmg > 0)
             {
-                damageable.TakeDamage(damage);
+                damageable.TakeDamage(dmg);
             }
         }
     }
@@ -58,17 +72,17 @@ public class Shockwave : MonoBehaviour
         if (distance <= smallestRadius)
         {
             //100% of damage
-            return weaponData.damage;
+            return damage;
         }
         else if (distance <= middleRadius)
         {
             //75% of damage
-            return weaponData.damage * 0.75f;
+            return damage * 0.75f;
         }
         else if (distance <= biggestRadius)
         {
             //50% of damage
-            return weaponData.damage * 0.5f;
+            return damage * 0.5f;
         }
 
         return 0f;

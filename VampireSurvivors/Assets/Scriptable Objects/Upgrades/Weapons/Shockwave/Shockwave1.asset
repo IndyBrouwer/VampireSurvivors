@@ -10,7 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 607f1b871f700e44ebf996d4b9a2aec7, type: 3}
-  m_Name: Orb2
+  m_Name: Shockwave1
   m_EditorClassIdentifier: Assembly-CSharp::WeaponUpgradeData
-  upgradeDescription: Increase orbs orbiting the player.
-  upgradeLevel: 2
+  upgradeDescription: Increase the size of shockwave weapon by 40%.
+  upgradeLevel: 1
+  powerMultiplier: 0
+  sizeMultiplier: 1.4
+  cooldownReduction: 0
+  increaseAmount: 0
+  increaseHits: 0

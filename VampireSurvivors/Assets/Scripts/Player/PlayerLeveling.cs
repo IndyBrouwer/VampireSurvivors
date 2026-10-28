@@ -14,6 +14,7 @@ public class PlayerLeveling : MonoBehaviour
 
     [Header("Scripts")]
     [SerializeField] private LevelupController selectorControllerScript;
+    [SerializeField] private UpgradeSelector upgradeSelector;
     [SerializeField] private PauseGame pauseGameScript;
 
     private void Start()
@@ -80,6 +81,8 @@ public class PlayerLeveling : MonoBehaviour
 
             //Set the new max value of the experience slider
             experienceSlider.maxValue = GetExperienceForCurrentLevel() * 1.5f;
+
+            upgradeSelector.FillSlots();
 
             selectorControllerScript.EnableSelector();
         }

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 869346952223587904}
   - component: {fileID: 6813965370996285534}
   - component: {fileID: -1027153817393566468}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Nearest Bullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}

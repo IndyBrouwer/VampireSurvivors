@@ -8,13 +8,23 @@ public class ShockwaveBehaviour : MonoBehaviour, IWeaponBehaviour
     [Header("Game Objects")]
     [SerializeField] private GameObject shockwaveWeapon;
 
+    [Header("Shockwave Pulse Settings")]
     private float timeActive = 0.5f;
     private float timer = 0;
-
     private bool shockwaveActive = false;
 
+    [Header("Ring Radius")]
+    [SerializeField] private float smallestRadius = 1f;
+    [SerializeField] private float middleRadius = 1.5f;
+    [SerializeField] private float biggestRadius = 2f;
+
+    [Header("Upgradable Stats")]
+    private float damage;
+
+    [Header("Components")]
     private Animator shockwaveAnimator;
 
+    [Header("Scripts")]
     private Weapon weaponScript;
 
     public void Initialize(WeaponData scriptableObject, Weapon weaponBrainScript)
@@ -23,7 +33,18 @@ public class ShockwaveBehaviour : MonoBehaviour, IWeaponBehaviour
         weaponData = scriptableObject;
         weaponScript = weaponBrainScript;
 
-        shockwaveWeapon.GetComponent<Shockwave>().Initialize(weaponData, this);
+        damage = weaponData.damage;
+
+        //Set radius from rings
+        smallestRadius = weaponData.radius[0];
+        middleRadius = weaponData.radius[1];
+        biggestRadius = weaponData.radius[2];
+
+        //Setup Shockwave script
+        Shockwave shockwaveScript = shockwaveWeapon.GetComponent<Shockwave>();
+        shockwaveScript.Initialize(weaponData, this);
+        shockwaveScript.SetValues(damage, smallestRadius, middleRadius, biggestRadius);
+
         shockwaveAnimator = shockwaveWeapon.GetComponent<Animator>();
     }
 
@@ -73,5 +94,22 @@ public class ShockwaveBehaviour : MonoBehaviour, IWeaponBehaviour
 
             shockwaveWeapon.SetActive(false);
         }        
+    }
+
+    public void SetValues(float damageMultiplyer, float radiusMultiplyer, float speedMultiplyer, int projectileIncrease, int increaseHits)
+    {
+        if (damageMultiplyer != 0)
+        {
+            //Increase damage
+            damage *= damageMultiplyer;
+        }
+
+        if (radiusMultiplyer != 0)
+        {
+            //Increase size
+            smallestRadius *= radiusMultiplyer;
+            middleRadius *= radiusMultiplyer;
+            biggestRadius *= radiusMultiplyer;
+        }
     }
 }

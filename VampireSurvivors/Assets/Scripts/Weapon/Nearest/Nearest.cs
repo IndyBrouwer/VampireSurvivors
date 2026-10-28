@@ -7,6 +7,8 @@ public class Nearest : MonoBehaviour
     private Vector3 startPosition;
     private float maxDistance;
 
+    private float damage;
+
     [Header("Interfaces")]
     private IDamageable damageableObject;
 
@@ -15,11 +17,17 @@ public class Nearest : MonoBehaviour
     public void Initialize(WeaponData scriptableObject, NearestBehaviour script)
     {
         weaponData = scriptableObject;
-
         nearestBehaviourScipt = script;
-        maxDistance = nearestBehaviourScipt.GetMaxRadius();
 
         startPosition = transform.position;
+
+        damage = scriptableObject.damage;
+    }
+
+    public void SetValues(float power, float radius)
+    {
+        damage = power;
+        maxDistance = radius;
     }
 
     //Despawn when maxradius reached from parent
@@ -44,7 +52,7 @@ public class Nearest : MonoBehaviour
     private void Attack()
     {
         //Deal damage on hit
-        damageableObject.TakeDamage(weaponData.damage);
+        damageableObject.TakeDamage(damage);
 
         Despawn();
     }

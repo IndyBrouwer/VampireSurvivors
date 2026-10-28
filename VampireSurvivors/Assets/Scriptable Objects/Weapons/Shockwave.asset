@@ -14,12 +14,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::WeaponData
   weaponName: Shockwave
   weaponID: weapon_shockwave
-  sprite: {fileID: 0}
-  damage: 70
+  sprite: {fileID: -1375217143, guid: 8c5429e54667fba47b9110c01a67695c, type: 3}
+  description: Deal damage based on how close the enemy is to it's middle point.
+  damage: 100
   interval: 3
+  radius:
+  - 1
+  - 1.5
+  - 2
   moveSpeed: 0
   projectile: {fileID: 0}
   maxUprades: 2
   upgrades:
   - {fileID: 11400000, guid: 50295927000dc454ab395f616cc88472, type: 2}
   - {fileID: 11400000, guid: b78b7f801cfb2ad43834be367a26c28b, type: 2}
+  - {fileID: 11400000, guid: 4437570a17696cc4c8012d846056d17f, type: 2}
