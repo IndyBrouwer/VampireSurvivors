@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class NearestBehaviour : MonoBehaviour, IWeaponBehaviour
@@ -30,15 +31,18 @@ public class NearestBehaviour : MonoBehaviour, IWeaponBehaviour
 
     public void Fire()
     {
+        //Draw max range circle
+        Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, maxRadius);
+
+        //Keep track of targets from bullets within this call of fire
+        HashSet<GameObject> targetedEnemies = new HashSet<GameObject>();
+
         //Create a loop so we can fire multiple bullets (different targets!)
         for (int index = 0; index < projectileAmount; index++)
         {
             //Reset closestDistance var and closesthit var every time a new cycle starts for this weapon
             closestDistance = maxRadius;
             closestTarget = null;
-
-            //Draw max range circle
-            Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, maxRadius);
 
             //Check for enemies within circle
             foreach (Collider2D hit in hits)
@@ -48,6 +52,12 @@ public class NearestBehaviour : MonoBehaviour, IWeaponBehaviour
                 if (damageable == null || hit.CompareTag("Player"))
                 {
                     //If object is no damageable object or is player, skip this object
+                    continue;
+                }
+
+                //Skip enemies that already have a nearest projectile targeting them
+                if (targetedEnemies.Contains(hit.gameObject))
+                {
                     continue;
                 }
 
@@ -61,11 +71,16 @@ public class NearestBehaviour : MonoBehaviour, IWeaponBehaviour
                 }
             }
 
-            //Spawn bullet and send in that direction
-            if (closestTarget != null)
+            if (closestTarget == null)
             {
-                CreateBullet(closestTarget.transform.position);
+                break;
             }
+
+            //Reserve targeted enemy for this projectile
+            targetedEnemies.Add(closestTarget);
+
+            //Spawn bullet and send in targets direction
+            CreateBullet(closestTarget.transform.position);
         }
     }
 

@@ -22,11 +22,6 @@ public class UpgradeSelector : MonoBehaviour
         //use dictionary.ToList() to loop a copy of the dictionary while removing invalid entries from the actual dictionary
         foreach (var weapon in unlockables.ToList())
         {
-            //if (weapon.Value is false)
-            //{
-            //    unlockables.Remove(weapon.Key);
-            //}
-
             if (!weapon.Key.CanUpgrade())
             {
                 unlockables.Remove(weapon.Key);
@@ -35,23 +30,31 @@ public class UpgradeSelector : MonoBehaviour
 
         //else update slot with info and remove from list
 
+        var availableUnlockables = unlockables.ToList();
+
+        //Loop through all slots
         for (int index = 0; index < 3; index++)
         {
-            //Check if list is empty, continue.
-            if (unlockables.Count > 0)
+            // Stop if there are no more weapons available
+            if (availableUnlockables.Count == 0)
             {
-                //Generate random number between 0 and weaponownedstatus.count
-                int randomPick = Random.Range(0, unlockables.Count);
+                slots[index].SetActive(false);
 
-                LevelupSlot slotScript = slots[index].GetComponent<LevelupSlot>();
-                slotScript.SetupSlot(unlockables.ElementAt(randomPick).Key, unlockables.ElementAt(randomPick).Value, inventoryScript);
-            }
-            else
-            {
+                //If all slots are false, disable levelup menu
+
                 continue;
             }
 
-            //slots[index].GetComponent<LevelupSlot>().SetupSlot(weaponOwnedStatus.ElementAt(index).Key, weaponOwnedStatus.ElementAt(index).Value, weaponManagerScript);
+            //Generate random number between 0 and weaponownedstatus.count
+            int randomPick = Random.Range(0, availableUnlockables.Count);
+
+            var unlockable = availableUnlockables[randomPick];
+
+            LevelupSlot slotScript = slots[index].GetComponent<LevelupSlot>();
+            slotScript.SetupSlot(unlockable.Key, unlockable.Value, inventoryScript);
+
+            //Remove from the list used for this shop setup (avoid duplicates)
+            availableUnlockables.RemoveAt(randomPick);
         }
     }
 }
