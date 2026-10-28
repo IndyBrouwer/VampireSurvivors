@@ -45,7 +45,7 @@ public class Enemy : MonoBehaviour, IDamageable, IDroppable, ILevelable
     {
         if (TryGetComponent<IEnemyBehaviour>(out enemyBehaviour))
         {
-            enemyBehaviour.Initialize(enemyData, playerPosition);
+            enemyBehaviour.Initialize(enemyData, playerPosition, animator);
         }
         else
         {
@@ -79,7 +79,7 @@ public class Enemy : MonoBehaviour, IDamageable, IDroppable, ILevelable
         //Call the move function from the enemy behaviour script
         enemyBehaviour.Move();
 
-        enemyBehaviour.UpdateAnimation(spriteRenderer);
+        enemyBehaviour.UpdateAnimation();
     }
 
     private void OnCollisionStay2D(Collision2D collision)
@@ -97,10 +97,12 @@ public class Enemy : MonoBehaviour, IDamageable, IDroppable, ILevelable
         damageEffectScript.DamageColorEffect(GetComponent<SpriteRenderer>());
 
         currentHealth -= damage;
+        Debug.Log("Current health is: " + currentHealth + "Damage taken: " + damage);
 
         if (currentHealth <= 0 && !isDead)
         {
             isDead = true;
+
             Die();
         }
     }

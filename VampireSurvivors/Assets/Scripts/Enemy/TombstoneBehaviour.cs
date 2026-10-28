@@ -99,6 +99,8 @@ public class TombstoneBehaviour : MonoBehaviour, IEnemyBehaviour
         //Could swap the one second out for animation duration
         yield return new WaitForSeconds(1f);
 
+        timeAlive = 0;
+
         isDespawning = false;
 
         //Just despawn enemy instead of it actually dying, so it doesnt count as kill and wont drop an item.

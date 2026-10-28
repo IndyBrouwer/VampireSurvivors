@@ -11,15 +11,19 @@ public class WalkerBehaviour : MonoBehaviour, IEnemyBehaviour
 
     [Header("Required Components")]
     private Rigidbody2D rb;
+    private Animator animator;
+    private SpriteRenderer spriteRenderer;
 
-    public void Initialize(EnemyData scriptableObject, Transform playerPos)
+    public void Initialize(EnemyData scriptableObject, Transform playerPos, Animator enemyAnimator)
     {
         enemyData = scriptableObject;
 
         playerPosition = playerPos;
         speed = enemyData.speed;
 
+        animator = enemyAnimator;
         rb = GetComponent<Rigidbody2D>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     //Move is already being called by enemy script
@@ -33,7 +37,7 @@ public class WalkerBehaviour : MonoBehaviour, IEnemyBehaviour
     }
 
     //Already being called by enemy script
-    public void UpdateAnimation(SpriteRenderer spriteRenderer)
+    public void UpdateAnimation()
     {
         if (rb.linearVelocity.x > 0)
         {
