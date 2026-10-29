@@ -17,6 +17,7 @@ public class ShockwaveBehaviour : MonoBehaviour, IWeaponBehaviour
     [SerializeField] private float smallestRadius = 1f;
     [SerializeField] private float middleRadius = 1.5f;
     [SerializeField] private float biggestRadius = 2f;
+    private float sizeMultiplyer;
 
     [Header("Upgradable Stats")]
     private float damage;
@@ -26,6 +27,7 @@ public class ShockwaveBehaviour : MonoBehaviour, IWeaponBehaviour
 
     [Header("Scripts")]
     private Weapon weaponScript;
+    private Shockwave shockwaveScript;
 
     public void Initialize(WeaponData scriptableObject, Weapon weaponBrainScript)
     {
@@ -41,9 +43,9 @@ public class ShockwaveBehaviour : MonoBehaviour, IWeaponBehaviour
         biggestRadius = weaponData.radius[2];
 
         //Setup Shockwave script
-        Shockwave shockwaveScript = shockwaveWeapon.GetComponent<Shockwave>();
+        shockwaveScript = shockwaveWeapon.GetComponent<Shockwave>();
         shockwaveScript.Initialize(weaponData, this);
-        shockwaveScript.SetValues(damage, smallestRadius, middleRadius, biggestRadius);
+        shockwaveScript.SetValues(damage, smallestRadius, middleRadius, biggestRadius, sizeMultiplyer);
 
         shockwaveAnimator = shockwaveWeapon.GetComponent<Animator>();
     }
@@ -110,6 +112,14 @@ public class ShockwaveBehaviour : MonoBehaviour, IWeaponBehaviour
             smallestRadius *= radiusMultiplyer;
             middleRadius *= radiusMultiplyer;
             biggestRadius *= radiusMultiplyer;
+
+            sizeMultiplyer = radiusMultiplyer;
         }
+        else
+        {
+            sizeMultiplyer = 0;
+        }
+
+        shockwaveScript.SetValues(damage, smallestRadius, middleRadius, biggestRadius, sizeMultiplyer);
     }
 }

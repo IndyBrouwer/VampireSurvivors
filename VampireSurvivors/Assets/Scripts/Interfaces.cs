@@ -31,8 +31,7 @@ public interface ICollectable
 
 public interface ILevelable
 {
-    public void LevelUp();
-    public void SetValues();
+    public void LevelUp(int waveNumber);
 }
 
 public interface ISpawnable

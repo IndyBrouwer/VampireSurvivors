@@ -76,15 +76,18 @@ public class PlayerLeveling : MonoBehaviour
         //If player actually leveled up
         if (increaseMax)
         {
-            //Pause game
-            pauseGameScript.Pause();
-
             //Set the new max value of the experience slider
             experienceSlider.maxValue = GetExperienceForCurrentLevel() * 1.5f;
 
             upgradeSelector.FillSlots();
+            
+            if (upgradeSelector.ShouldShow())
+            {
+                //Pause game
+                pauseGameScript.Pause();
 
-            selectorControllerScript.EnableSelector();
+                selectorControllerScript.EnableSelector();
+            }
         }
     }
 }

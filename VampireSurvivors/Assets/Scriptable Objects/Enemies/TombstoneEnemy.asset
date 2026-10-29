@@ -28,3 +28,4 @@ MonoBehaviour:
   xpAmount: 5
   goldAmount: 1
   healthAmount: 25
+  levelupMultiplyer: 1.2

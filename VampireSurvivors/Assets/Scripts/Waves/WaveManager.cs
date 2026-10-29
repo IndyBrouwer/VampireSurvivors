@@ -9,12 +9,12 @@ public class WaveManager : MonoBehaviour
     [SerializeField] private Transform player;
 
     private int currentWaveIndex = 0;
+    private int wavesPassed = 0;
     private bool isSpawning = false;
     private bool systemActive = true;
 
     [Header("Scripts")]
     private EnemySpawnPosition spawnPositionScript;
-
 
     private void Start()
     {
@@ -41,6 +41,10 @@ public class WaveManager : MonoBehaviour
         //Progress the waves
         currentWaveIndex++;
 
+        wavesPassed++;
+
+        //Level enemy
+
         if (currentWaveIndex >= waves.Count)
         {
             currentWaveIndex = 0;
@@ -53,8 +57,6 @@ public class WaveManager : MonoBehaviour
     {
         foreach (EnemyWaveData enemy in wave.enemies)
         {
-            Debug.Log("Enemy Type: " + enemy.enemyData + "." + "Amount of enemies: " + enemy.amount);
-
             for (int index = 0; index < enemy.amount; index++)
             {
                 //Get the current center position
@@ -68,6 +70,8 @@ public class WaveManager : MonoBehaviour
                     GameObject newEnemy = PoolManager.Instance.DeQueuePoolObject(enemy.enemyData.enemyID);
                     newEnemy.transform.position = spawnPosition;
                     newEnemy.transform.rotation = Quaternion.identity;
+
+                    newEnemy.GetComponent<Enemy>().LevelUp(wavesPassed);
                 }
                 else
                 {
@@ -77,6 +81,8 @@ public class WaveManager : MonoBehaviour
                     GameObject newEnemy = PoolManager.Instance.DeQueuePoolObject(enemy.enemyData.enemyID);
                     newEnemy.transform.position = spawPosition;
                     newEnemy.transform.rotation = Quaternion.identity;
+
+                    newEnemy.GetComponent<Enemy>().LevelUp(wavesPassed);
 
                     //Wait for spawn delay
                     yield return new WaitForSeconds(wave.spawnDelay);

@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Shockwave : MonoBehaviour
 {
@@ -24,7 +25,7 @@ public class Shockwave : MonoBehaviour
         shockwaveBehaviourScript = script;
     }
 
-    public void SetValues(float power, float radiusSmall, float radiusMiddle, float radiusBig)
+    public void SetValues(float power, float radiusSmall, float radiusMiddle, float radiusBig, float sizeMultiplyer)
     {
         //Set damage
         damage = power;
@@ -33,6 +34,11 @@ public class Shockwave : MonoBehaviour
         smallestRadius = radiusSmall;
         middleRadius = radiusMiddle;
         biggestRadius = radiusBig;
+
+        if (sizeMultiplyer != 0)
+        {
+            transform.localScale = new Vector3(transform.localScale.x * sizeMultiplyer, transform.localScale.y * sizeMultiplyer, 1);
+        }
     }
 
     private void FixedUpdate()

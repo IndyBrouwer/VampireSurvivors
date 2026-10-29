@@ -15,7 +15,8 @@ MonoBehaviour:
   upgradeDescription: Increase the size of shockwave weapon by 40%.
   upgradeLevel: 1
   powerMultiplier: 0
-  sizeMultiplier: 1.4
+  radiusMultiplier: 1.4
+  speedMultiplier: 0
   cooldownReduction: 0
   increaseAmount: 0
   increaseHits: 0

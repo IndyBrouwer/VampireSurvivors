@@ -7,7 +7,10 @@ public class UpgradeSelector : MonoBehaviour
     [Header("Levelup menu slots")]
     [SerializeField] private GameObject[] slots;
 
+    private bool allSlotsDisabled = true;
+
     [SerializeField] private Inventory inventoryScript;
+    [SerializeField] private LevelupController levelupControllerScript;
 
     //Check which weapons, upgrades and items the player currently has, (required inventory script)
 
@@ -40,8 +43,6 @@ public class UpgradeSelector : MonoBehaviour
             {
                 slots[index].SetActive(false);
 
-                //If all slots are false, disable levelup menu
-
                 continue;
             }
 
@@ -55,6 +56,30 @@ public class UpgradeSelector : MonoBehaviour
 
             //Remove from the list used for this shop setup (avoid duplicates)
             availableUnlockables.RemoveAt(randomPick);
+        }
+    }
+
+    public bool ShouldShow()
+    {
+        allSlotsDisabled = true;
+
+        //If all slots are false, disable levelup menu
+        foreach(GameObject slot in slots)
+        {
+            if (slot.activeSelf)
+            {
+                allSlotsDisabled = false;
+                break;
+            }
+        }
+
+        if (allSlotsDisabled)
+        {
+            return false;
+        }
+        else
+        {
+            return true;
         }
     }
 }

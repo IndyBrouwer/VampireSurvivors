@@ -19,12 +19,13 @@ MonoBehaviour:
   damage: 50
   interval: 1
   radius:
-  - 10
+  - 15
   moveSpeed: 7
   projectile: {fileID: 3473899143075633819, guid: b364907d19b290e4c807caf92c9968a7, type: 3}
-  maxUprades: 2
+  maxUprades: 5
   upgrades:
   - {fileID: 11400000, guid: 3f6a15998e8668843ad121f3e7b15595, type: 2}
   - {fileID: 11400000, guid: 8d3b9d71e02f5204bb527d17e88bc82f, type: 2}
   - {fileID: 11400000, guid: fb1c88ee7a6630d40a521e374749c86d, type: 2}
   - {fileID: 11400000, guid: e240c6bdd34813147919242ec67e967b, type: 2}
+  - {fileID: 11400000, guid: 478c528165c1a5a4c8ddb1949049fe02, type: 2}

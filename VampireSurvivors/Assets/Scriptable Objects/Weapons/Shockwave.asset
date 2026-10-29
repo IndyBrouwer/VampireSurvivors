@@ -24,8 +24,10 @@ MonoBehaviour:
   - 2
   moveSpeed: 0
   projectile: {fileID: 0}
-  maxUprades: 2
+  maxUprades: 5
   upgrades:
   - {fileID: 11400000, guid: 50295927000dc454ab395f616cc88472, type: 2}
   - {fileID: 11400000, guid: b78b7f801cfb2ad43834be367a26c28b, type: 2}
   - {fileID: 11400000, guid: 4437570a17696cc4c8012d846056d17f, type: 2}
+  - {fileID: 11400000, guid: 79c282e81567fb54da8b4032ffc76906, type: 2}
+  - {fileID: 11400000, guid: 09f68d3b6b1b79d408e55b2fa538f8ce, type: 2}

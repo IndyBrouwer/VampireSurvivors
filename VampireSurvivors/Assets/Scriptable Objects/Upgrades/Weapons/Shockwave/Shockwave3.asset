@@ -15,7 +15,8 @@ MonoBehaviour:
   upgradeDescription: Increase size by 20%.
   upgradeLevel: 3
   powerMultiplier: 0
-  sizeMultiplier: 1.2
+  radiusMultiplier: 1.2
+  speedMultiplier: 0
   cooldownReduction: 0
   increaseAmount: 0
   increaseHits: 0

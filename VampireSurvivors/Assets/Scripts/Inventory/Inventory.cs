@@ -1,8 +1,11 @@
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class Inventory : MonoBehaviour
 {
+    public static Inventory Instance;
+
     //Dictionary for each category with a bool to keep track of if the player has that item
     [Header("Dictionaries")]
     private Dictionary<Weapon, bool> weaponStatuses = new Dictionary<Weapon, bool>();
@@ -12,7 +15,8 @@ public class Inventory : MonoBehaviour
 
     [Header("Weapon Lists")]
     [SerializeField] private Weapon[] allWeapons;
-    [SerializeField] private WeaponUpgradeData[] allWeaponUpgrades;
+    //[SerializeField] private WeaponUpgradeData[] allWeaponUpgrades;
+    private List<WeaponUpgradeData> allWeaponUpgrades = new List<WeaponUpgradeData>();
 
     [Header("Item Lists")]
     [SerializeField] private ItemData[] allItems;
@@ -21,6 +25,13 @@ public class Inventory : MonoBehaviour
     [Header("Scripts")]
     [SerializeField] private WeaponManager weaponManager;
     private InventoryUI inventoryUIScript;
+
+    private void Awake()
+    {
+        Instance = this;
+
+        CreateUpgradeList();
+    }
 
     private void Start()
     {
@@ -40,6 +51,19 @@ public class Inventory : MonoBehaviour
             if (startingWeaponID == allWeapons[index].GetWeaponData().weaponID)
             {
                 AddWeapon(allWeapons[index]);
+            }
+        }
+    }
+
+    private void CreateUpgradeList()
+    {
+        foreach (Weapon weapon in allWeapons)
+        {
+            WeaponData weaponData = weapon.GetWeaponData();
+
+            foreach (WeaponUpgradeData upgrade in weaponData.upgrades)
+            {
+                allWeaponUpgrades.Add(upgrade);
             }
         }
     }

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,12 +9,15 @@ public class Enemy : MonoBehaviour, IDamageable, IDroppable, ILevelable
 
     private float maxHealth;
     private float currentHealth;
+    private float damage;
+    private float xp;
 
     private bool isDead = false;
 
     [Header("Required Components")]
     private SpriteRenderer spriteRenderer;
     private Animator animator;
+    private Collider2D enemyCollider;
 
     private IEnemyBehaviour enemyBehaviour;
     private ICollectable collectable;
@@ -27,6 +31,7 @@ public class Enemy : MonoBehaviour, IDamageable, IDroppable, ILevelable
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
+        enemyCollider = GetComponent<Collider2D>();
         damageEffectScript = GetComponent<DamageEffect>();
 
         SetupEnemy();
@@ -39,6 +44,8 @@ public class Enemy : MonoBehaviour, IDamageable, IDroppable, ILevelable
         {
             spriteRenderer.color = Color.white;
         }
+
+        ResetEnemy();
     }
 
     public void InitializeEnemy(Transform playerPosition, KillCounter script)
@@ -64,14 +71,16 @@ public class Enemy : MonoBehaviour, IDamageable, IDroppable, ILevelable
         currentHealth = maxHealth;
     }
 
-    public void LevelUp()
+    public void LevelUp(int wave)
     {
         //With every new wave, increase Scriptable objects values by a certain percentage
-    }
+        float multiplier = 1f + (wave * 0.2f);
 
-    public void SetValues()
-    {
-        //Change local vars
+        maxHealth = enemyData.health * multiplier;
+        damage = enemyData.damage * multiplier;
+        xp = enemyData.xpAmount * multiplier;
+
+        Mathf.RoundToInt(xp);
     }
 
     private void Update()
@@ -110,7 +119,7 @@ public class Enemy : MonoBehaviour, IDamageable, IDroppable, ILevelable
     public void Drop()
     {
         //Check if the enemy should drop an item based on its drop rate
-        if (Random.value > enemyData.dropRate)
+        if (UnityEngine.Random.value > enemyData.dropRate)
         {
             return;
         }
@@ -124,7 +133,7 @@ public class Enemy : MonoBehaviour, IDamageable, IDroppable, ILevelable
         }
 
         //Pick a drop based on the drop rates of each possible drop
-        float randomValue = Random.value * totalDropRate;
+        float randomValue = UnityEngine.Random.value * totalDropRate;
 
         foreach (DropData drop in enemyData.possibleDrops)
         {
@@ -177,6 +186,8 @@ public class Enemy : MonoBehaviour, IDamageable, IDroppable, ILevelable
 
     public void Die()
     {
+        enemyCollider.enabled = false;
+
         //Add kill to kill counter
         killCounterScript.IncreaseKillCount();
 
@@ -193,8 +204,6 @@ public class Enemy : MonoBehaviour, IDamageable, IDroppable, ILevelable
         //Wait for the death animation to finish
         yield return new WaitForSeconds(animator.GetCurrentAnimatorStateInfo(0).length);
 
-        ResetEnemy();
-
         //Set object inactive to reuse for another enemy
         PoolManager.Instance.EnQueuePoolObject(gameObject);
     }
@@ -203,5 +212,7 @@ public class Enemy : MonoBehaviour, IDamageable, IDroppable, ILevelable
     {
         isDead = false;
         currentHealth = maxHealth;
+
+        enemyCollider.enabled = true;
     }
 }

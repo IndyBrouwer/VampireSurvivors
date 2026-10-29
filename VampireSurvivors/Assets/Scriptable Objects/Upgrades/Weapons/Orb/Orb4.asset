@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 607f1b871f700e44ebf996d4b9a2aec7, type: 3}
   m_Name: Orb4
   m_EditorClassIdentifier: Assembly-CSharp::WeaponUpgradeData
-  upgradeDescription: 
+  upgradeDescription: +1 orbiting projectile.
   upgradeLevel: 4
   powerMultiplier: 0
   radiusMultiplier: 0

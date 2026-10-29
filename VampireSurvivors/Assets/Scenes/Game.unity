@@ -2779,7 +2779,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
+  m_BackGroundColor: {r: 0.38431373, g: 0.32941177, b: 0.3764706, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -7818,19 +7818,6 @@ MonoBehaviour:
   - {fileID: 2023376750}
   - {fileID: 1126221193}
   - {fileID: 442287040}
-  allWeaponUpgrades:
-  - {fileID: 11400000, guid: 3f6a15998e8668843ad121f3e7b15595, type: 2}
-  - {fileID: 11400000, guid: 8d3b9d71e02f5204bb527d17e88bc82f, type: 2}
-  - {fileID: 11400000, guid: 49e8ae63a0e0dcc4d8eceb5f9331abc4, type: 2}
-  - {fileID: 11400000, guid: 32d5888b2fe1495438c41f1fd3bc06c2, type: 2}
-  - {fileID: 11400000, guid: 9bc37be34bc28f146bdff0444f5f77a9, type: 2}
-  - {fileID: 11400000, guid: fbb90193ab74dcb479203d42be06baf7, type: 2}
-  - {fileID: 11400000, guid: d79c23176ae13914394d432602568f86, type: 2}
-  - {fileID: 11400000, guid: 5fc01a3149b9f254e830ccc2a7be8ef0, type: 2}
-  - {fileID: 11400000, guid: bb7ab9d359ce8bd4d9e1c3598b53361c, type: 2}
-  - {fileID: 11400000, guid: 50295927000dc454ab395f616cc88472, type: 2}
-  - {fileID: 11400000, guid: b78b7f801cfb2ad43834be367a26c28b, type: 2}
-  - {fileID: 11400000, guid: 4437570a17696cc4c8012d846056d17f, type: 2}
   allItems:
   - {fileID: 11400000, guid: beb0bda6ddf5d3341ba845ed63242ff1, type: 2}
   allItemUpgrades: []
@@ -8265,6 +8252,7 @@ MonoBehaviour:
   - {fileID: 825207220}
   - {fileID: 2103743562}
   inventoryScript: {fileID: 1382173639}
+  levelupControllerScript: {fileID: 0}
 --- !u!1 &1455540457
 GameObject:
   m_ObjectHideFlags: 0
