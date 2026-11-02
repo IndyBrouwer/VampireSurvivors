@@ -82,8 +82,6 @@ public class Enemy : MonoBehaviour, IDamageable, IDroppable, ILevelable
         xp = enemyData.xpAmount * multiplier;
 
         Mathf.RoundToInt(xp);
-
-        Debug.Log("Enemy leveled up to wave " + wave + ". New stats - Health: " + maxHealth + ", Damage: " + damage + ", XP: " + xp);
     }
 
     private void Update()

@@ -10,16 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ce740a64ea59a4043be479002addc443, type: 3}
-  m_Name: FlyingEnemy
+  m_Name: AlienEnemy
   m_EditorClassIdentifier: Assembly-CSharp::EnemyData
-  enemyName: Bat
-  enemyID: enemy_bat
-  prefab: {fileID: 3526578558933544913, guid: 7db2847c00a451d48aee103b1dc418ee, type: 3}
-  sprite: {fileID: -4713757780111244303, guid: 4e862fdded645fe42812cb4d5d8af316, type: 3}
-  health: 20
-  speed: 3
-  damage: 10
-  attackCooldown: 0.25
+  enemyName: Small Alien
+  enemyID: enemy_alien
+  prefab: {fileID: 7833074932617531484, guid: b635f6665699f6843a7e1fdf6c227f99, type: 3}
+  sprite: {fileID: -3084479609506310426, guid: 5629682b9c9ea014c91afbd31be9d6e4, type: 3}
+  health: 40
+  speed: 2
+  damage: 7
+  attackCooldown: 0.5
   dropRate: 0.75
   possibleDrops:
   - {fileID: 11400000, guid: 9b937da0d70b613498538fa7390802e2, type: 2}
@@ -28,4 +28,3 @@ MonoBehaviour:
   xpAmount: 1
   goldAmount: 1
   healthAmount: 25
-  levelupMultiplyer: 1.2

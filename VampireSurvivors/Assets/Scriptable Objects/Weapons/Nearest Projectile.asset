@@ -16,7 +16,7 @@ MonoBehaviour:
   weaponID: weapon_nearest
   sprite: {fileID: -5193148228990907851, guid: 6877eba373a99c045afd5b911f463e5c, type: 3}
   description: Shoot a bullet at the closest enemy.
-  damage: 50
+  damage: 40
   interval: 1
   radius:
   - 15

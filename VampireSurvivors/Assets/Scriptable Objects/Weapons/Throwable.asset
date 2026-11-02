@@ -16,7 +16,7 @@ MonoBehaviour:
   weaponID: weapon_throwable
   sprite: {fileID: 21300000, guid: 571fe87eb4451f749b205bf5999d8427, type: 3}
   description: Throw a gravity projectile in a random direction.
-  damage: 100
+  damage: 50
   interval: 2
   radius:
   - 200

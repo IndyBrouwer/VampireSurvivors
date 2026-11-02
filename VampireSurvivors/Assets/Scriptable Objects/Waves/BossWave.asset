@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 828bcceb1c9ccc6478afd8409df429fa, type: 3}
   m_Name: BossWave
   m_EditorClassIdentifier: Assembly-CSharp::WaveData
-  enemies: []
-  spawnDelay: 3
+  enemies:
+  - enemyData: {fileID: 11400000, guid: 41632645fe6749d4fbe9277a9935b61d, type: 2}
+    amount: 50
+  spawnDelay: 1
   waveDelay: 3

@@ -840,10 +840,10 @@ MonoBehaviour:
     objectID: enemy_tombstone
     prefab: {fileID: 8899271757664148746, guid: 435e9b89df0c2214a8f107886587bfcf, type: 3}
     amount: 40
-  - objectName: Grouping Enemy
-    objectID: enemy_group
-    prefab: {fileID: 3526578558933544913, guid: 7db2847c00a451d48aee103b1dc418ee, type: 3}
-    amount: 0
+  - objectName: Alien Enemy
+    objectID: enemy_alien
+    prefab: {fileID: 7833074932617531484, guid: b635f6665699f6843a7e1fdf6c227f99, type: 3}
+    amount: 20
   - objectName: XP
     objectID: drop_xp
     prefab: {fileID: 5128270278704571516, guid: a9f1336241b72394ebd448f553b5a253, type: 3}
@@ -10420,51 +10420,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1634623860}
   m_CullTransparentMesh: 1
---- !u!1 &1651024755
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1651024757}
-  - component: {fileID: 1651024756}
-  m_Layer: 0
-  m_Name: Admin Testing
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1651024756
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1651024755}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: adea1b533f3160342a8e810d92dd43b1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::AdminTest
-  levelingScript: {fileID: 1794624332}
---- !u!4 &1651024757
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1651024755}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 890.5003, y: 429.58, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1656112150
 GameObject:
   m_ObjectHideFlags: 0
@@ -11547,7 +11502,7 @@ MonoBehaviour:
     m_ActionName: 'Player/Pause[/Keyboard/escape]'
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1651024756}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: AdminTest, Assembly-CSharp
         m_MethodName: AdminXP
         m_Mode: 1
@@ -13683,4 +13638,3 @@ SceneRoots:
   - {fileID: 984614853}
   - {fileID: 1794624321}
   - {fileID: 827886078}
-  - {fileID: 1651024757}

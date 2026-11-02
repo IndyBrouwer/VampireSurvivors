@@ -16,7 +16,7 @@ MonoBehaviour:
   weaponID: weapon_orb
   sprite: {fileID: 7495905855217554638, guid: 5135541e47cedc04ca84585624b527ce, type: 3}
   description: Orbiting weapon that damages enemies that it touches.
-  damage: 50
+  damage: 40
   interval: 5
   radius:
   - 2
