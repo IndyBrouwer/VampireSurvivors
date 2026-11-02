@@ -196,6 +196,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Enemy
   enemyData: {fileID: 11400000, guid: 41632645fe6749d4fbe9277a9935b61d, type: 2}
+  hitSFX:
+  - {fileID: 8300000, guid: 231dc49fe861fff4290c423af0c97a0f, type: 3}
 --- !u!114 &7844590061132789670
 MonoBehaviour:
   m_ObjectHideFlags: 0

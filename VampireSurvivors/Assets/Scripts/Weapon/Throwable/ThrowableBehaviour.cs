@@ -9,6 +9,8 @@ public class ThrowableBehaviour : MonoBehaviour, IWeaponBehaviour
     private int projectileAmount = 1;
     private int maxHits;
 
+    [SerializeField] private AudioClip[] sfx;
+
     [Header("Scripts")]
     private Weapon weaponScript;
 
@@ -44,6 +46,8 @@ public class ThrowableBehaviour : MonoBehaviour, IWeaponBehaviour
 
             GiveVelocity(newThrowable);
         }
+
+        PickSFX();
     }
 
     private void GiveVelocity(GameObject newThrowable)
@@ -92,5 +96,12 @@ public class ThrowableBehaviour : MonoBehaviour, IWeaponBehaviour
             //Increase enemies it can attack
             maxHits += increaseHits;
         }
+    }
+
+    private void PickSFX()
+    {
+        int pick = Random.Range(0, sfx.Length);
+
+        AudioManager.Instance.sfxManager.PlaySFX(sfx[pick]);
     }
 }

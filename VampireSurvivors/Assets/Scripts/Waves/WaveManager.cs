@@ -33,8 +33,6 @@ public class WaveManager : MonoBehaviour
     {
         isSpawning = true;
 
-        Debug.Log("Current Wave: " + currentWaveIndex);
-
         //Spawn the selected wave
         yield return StartCoroutine(SpawnEnemy(waves[currentWaveIndex]));
 

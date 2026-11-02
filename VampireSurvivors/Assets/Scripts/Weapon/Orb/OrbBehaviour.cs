@@ -19,6 +19,8 @@ public class OrbBehaviour : MonoBehaviour, IWeaponBehaviour
 
     private bool isOrbiting = false;
 
+    [SerializeField] private AudioClip[] sfx;
+
     [Header("Scripts")]
     private Weapon weaponScript;
 
@@ -72,6 +74,8 @@ public class OrbBehaviour : MonoBehaviour, IWeaponBehaviour
     //For increase in orbs for levels. Get a full circle, then devide it by the amount of orbs there are supposed to be to get their position.
     public void Fire()
     {
+        PickSFX();
+
         if (isOrbiting)
         {
             isOrbiting = false;
@@ -133,5 +137,12 @@ public class OrbBehaviour : MonoBehaviour, IWeaponBehaviour
         {
             orb.SetValues(damage, speed, radius);
         }
+    }
+
+    private void PickSFX()
+    {
+        int randomPick = Random.Range(0, sfx.Length);
+
+        AudioManager.Instance.sfxManager.PlaySFX(sfx[randomPick]);
     }
 }

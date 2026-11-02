@@ -5,6 +5,8 @@ public class CoinCollectable : MonoBehaviour, ICollectable
     [SerializeField] private DropData dropData;
     private float heldAmount;
 
+    [SerializeField] private AudioClip sfx;
+
     public void Initialize(float droppedAmount)
     {
         heldAmount = droppedAmount;
@@ -20,6 +22,8 @@ public class CoinCollectable : MonoBehaviour, ICollectable
 
     public void Collect(GameObject collector)
     {
+        AudioManager.Instance.sfxManager.PlaySFX(sfx);
+        
         //Add amount of coins to player wallet
         collector.GetComponentInParent<PlayerWallet>().AddCoins(heldAmount);
 

@@ -15,6 +15,8 @@ public class NearestBehaviour : MonoBehaviour, IWeaponBehaviour
     private float speed;
     private int projectileAmount = 1;
 
+    [SerializeField] private AudioClip[] shootSFX;
+
     [Header("Scritps")]
     private Weapon weaponScript;
 
@@ -103,6 +105,8 @@ public class NearestBehaviour : MonoBehaviour, IWeaponBehaviour
 
         //Give direction and the movespeed from scriptable object
         bulletRigidbody.linearVelocity = direction * speed;
+
+        PickSFX();
     }
 
     public float GetMaxRadius()
@@ -140,5 +144,12 @@ public class NearestBehaviour : MonoBehaviour, IWeaponBehaviour
             //Increase projectile amount
             projectileAmount += projectileIncrease;
         }
+    }
+
+    private void PickSFX()
+    {
+        int randomPick = Random.Range(0, shootSFX.Length);
+
+        AudioManager.Instance.sfxManager.PlaySFX(shootSFX[randomPick]);
     }
 }

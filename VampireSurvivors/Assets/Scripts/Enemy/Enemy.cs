@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -22,6 +21,8 @@ public class Enemy : MonoBehaviour, IDamageable, IDroppable, ILevelable
     private IEnemyBehaviour enemyBehaviour;
     private ICollectable collectable;
     private Dictionary<DropData, float> dropPairs = new Dictionary<DropData, float>();
+
+    [SerializeField] private AudioClip[] hitSFX;
 
     [Header("Required Scripts")]
     private DamageEffect damageEffectScript;
@@ -81,6 +82,8 @@ public class Enemy : MonoBehaviour, IDamageable, IDroppable, ILevelable
         xp = enemyData.xpAmount * multiplier;
 
         Mathf.RoundToInt(xp);
+
+        Debug.Log("Enemy leveled up to wave " + wave + ". New stats - Health: " + maxHealth + ", Damage: " + damage + ", XP: " + xp);
     }
 
     private void Update()
@@ -105,8 +108,9 @@ public class Enemy : MonoBehaviour, IDamageable, IDroppable, ILevelable
         //Damage vfx
         damageEffectScript.DamageColorEffect(GetComponent<SpriteRenderer>());
 
+        PickSFX();
+
         currentHealth -= damage;
-        Debug.Log("Current health is: " + currentHealth + "Damage taken: " + damage);
 
         if (currentHealth <= 0 && !isDead)
         {
@@ -114,6 +118,13 @@ public class Enemy : MonoBehaviour, IDamageable, IDroppable, ILevelable
 
             Die();
         }
+    }
+
+    private void PickSFX()
+    {
+        int randomPick = Random.Range(0, hitSFX.Length);
+
+        AudioManager.Instance.sfxManager.PlaySFX(hitSFX[randomPick]);
     }
 
     public void Drop()

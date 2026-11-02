@@ -11,6 +11,8 @@ public class LevelupSlot : MonoBehaviour, IClickable
     
     private bool owned;
 
+    [SerializeField] private AudioClip sfx;
+
     [Header("Scripts")]
     [SerializeField] private LevelupController levelupControllerScript;
     [SerializeField] private PauseGame pauseGameScript;
@@ -54,6 +56,8 @@ public class LevelupSlot : MonoBehaviour, IClickable
         {
             inventoryScript.AddWeapon(weaponScript);
         }
+
+        AudioManager.Instance.sfxManager.PlaySFX(sfx);
 
         levelupControllerScript.DisableSelector();
 

@@ -5,6 +5,8 @@ public class HealthCollectable : MonoBehaviour, ICollectable
     [SerializeField] private DropData dropData;
     private float healAmount;
 
+    [SerializeField] private AudioClip[] sfx;
+
     public void Initialize(float droppedAmount)
     {
         healAmount = droppedAmount;
@@ -20,9 +22,18 @@ public class HealthCollectable : MonoBehaviour, ICollectable
 
     public void Collect(GameObject collector)
     {
+        PickSFX();
+
         //Add health to player
         collector.GetComponentInParent<PlayerHealth>().Heal(healAmount);
 
         PoolManager.Instance.EnQueuePoolObject(gameObject);
+    }
+
+    private void PickSFX()
+    {
+        int randomPick = Random.Range(0, sfx.Length);
+
+        AudioManager.Instance.sfxManager.PlaySFX(sfx[randomPick]);
     }
 }

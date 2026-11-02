@@ -5,6 +5,8 @@ public class XPCollectable : MonoBehaviour, ICollectable
     [SerializeField] private DropData dropData;
     private float heldAmount;
 
+    [SerializeField] private AudioClip sfx;
+
     public void Initialize(float droppedAmount)
     {
         heldAmount = droppedAmount;
@@ -20,6 +22,8 @@ public class XPCollectable : MonoBehaviour, ICollectable
 
     public void Collect(GameObject collector)
     {
+        AudioManager.Instance.sfxManager.PlaySFX(sfx);
+
         //Add xp amount to player
         collector.GetComponentInParent<PlayerLeveling>().AddExperience(heldAmount);
 

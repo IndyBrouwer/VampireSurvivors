@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6092580524532170121}
   - component: {fileID: -7130804070215274191}
   - component: {fileID: 4183287404139297763}
+  - component: {fileID: 738331326990010068}
   m_Layer: 0
   m_Name: Coin Drop
   m_TagString: Untagged
@@ -142,3 +143,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CoinCollectable
   dropData: {fileID: 11400000, guid: 8af723d16af4e4a41bd677465e7e8949, type: 2}
+  sfx: {fileID: 8300000, guid: b179d07f5c1efd74787d3800afefd125, type: 3}
+--- !u!114 &738331326990010068
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3193550734215118475}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 845fa9f011017934aab95af7389bda54, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DespawnDrop
+  despawnTime: 20

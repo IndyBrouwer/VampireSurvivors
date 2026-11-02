@@ -22,6 +22,8 @@ public class ShockwaveBehaviour : MonoBehaviour, IWeaponBehaviour
     [Header("Upgradable Stats")]
     private float damage;
 
+    [SerializeField] private AudioClip[] sfx;
+
     [Header("Components")]
     private Animator shockwaveAnimator;
 
@@ -86,6 +88,8 @@ public class ShockwaveBehaviour : MonoBehaviour, IWeaponBehaviour
         {
             shockwaveWeapon.SetActive(true);
 
+            PickSFX();
+
             yield return new WaitForSeconds(1f);
 
             shockwaveActive = true;
@@ -121,5 +125,12 @@ public class ShockwaveBehaviour : MonoBehaviour, IWeaponBehaviour
         }
 
         shockwaveScript.SetValues(damage, smallestRadius, middleRadius, biggestRadius, sizeMultiplyer);
+    }
+
+    private void PickSFX()
+    {
+        int randomPick = Random.Range(0, sfx.Length);
+
+        AudioManager.Instance.sfxManager.PlaySFX(sfx[randomPick]);
     }
 }

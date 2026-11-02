@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3258273962479760689}
   - component: {fileID: 2792399097899882108}
   - component: {fileID: 3410559314510934314}
+  - component: {fileID: -1725048803942367403}
   m_Layer: 0
   m_Name: Health Pickup
   m_TagString: Untagged
@@ -142,3 +143,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HealthCollectable
   dropData: {fileID: 11400000, guid: c776bfd0334fa064d830762670567e61, type: 2}
+  sfx:
+  - {fileID: 8300000, guid: 293b5fb4bcfe12f4bad2c17b75c6e358, type: 3}
+  - {fileID: 8300000, guid: d097ae8bf00df584abfefcd6a0f9b76d, type: 3}
+  - {fileID: 8300000, guid: 9856a637c7f700742b8d25fc280d4ff2, type: 3}
+--- !u!114 &-1725048803942367403
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5724273640306514956}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 845fa9f011017934aab95af7389bda54, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DespawnDrop
+  despawnTime: 20

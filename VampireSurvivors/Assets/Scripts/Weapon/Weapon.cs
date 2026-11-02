@@ -76,7 +76,6 @@ public class Weapon : MonoBehaviour, IUpgradable
             }
 
             currentLevel++;
-            Debug.Log(weaponData.name + " has been upgrade to level: " + currentLevel);
         }
     }
 }
